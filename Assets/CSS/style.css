@@ -1,0 +1,341 @@
+* {
+    max-width: 960px;
+    margin: auto;
+    overflow-x: visible;
+}
+
+body {
+    background-image: url(../Images/gravel/gravel.png);
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    margin: 0 -9600px;
+    /* Using Negative Margins to allow bttm border to fill scrn */
+    padding: 0 9600px;
+    height: 85px;
+    border-style: solid;
+    border-color: darkgrey;
+    border-width: 0px 0px 1.5px 0px;
+    background-color:white;
+    z-index: 100;
+}
+
+.name {
+    background-color: #4aaaa5; 
+    color: white;
+    padding: 20px 35px 20px 35px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    font-size: 30px;
+    margin: 0px auto 0px 0px;
+    height: 45px;
+}
+
+.pages {
+    width: 298px;
+    margin-left: 390px;
+}
+
+.Menu {
+    list-style-type: none;
+    display: inline-flex;
+    width: 100%;
+    font-size: 14pt;
+    padding: 35px 0px 35px 0px;
+}
+
+.Menu a {
+    text-decoration: none;
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+    color: darkgray;
+    margin: 1px;
+    padding: 0px 15px 0px 15px;
+}
+
+#rightborder {
+    border-style: solid;
+    border-color: #cccccc;
+    border-width: 0px 1px 0px 0px;
+
+}
+
+.main-content {
+    border-style: solid;
+    border-color: #cccccc;
+    border-width: 1px;
+    margin-top: 115px;
+    margin-bottom: 30px;
+    background-color: white;
+    overflow: auto;
+}
+
+.about {
+    font-size: 30px;
+    color: #4aaaa5;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    padding: 10px 300px 30px 0px;
+    margin: 30px 30px 30px 30px;
+    border-style: solid;
+    border-color: #cccccc;
+    border-width: 0px 0px 2px 0px;
+}
+
+img[alt~="Portrait"] {
+    margin: 0px 25px 20px 30px;
+    float: left;
+    width: 200px;
+    height: 200px;
+    border-style: solid;
+    border-color: #cccccc;
+    border-width: 2px;
+}
+
+.body-text {
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+    color: #777777;
+    line-height: 30px;
+    font-weight: 130%;
+}
+
+p {
+    margin: 15px 20px 20px 20px;  /* figure how to algn w/ top of img*/
+}
+
+.topPara {
+    margin-top: -7px; /*solution for aligning top p text w/ images*/
+}
+
+.container {
+    border-style: solid;
+    border-color: #cccccc;
+    border-width: 2px;
+    width: fit-content;
+    height: fit-content;
+    float: right;
+    margin: 0px 30px 0px 30px;
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+    color: #777777;
+}
+
+.list1,.list2 {
+    padding: 5px;
+}
+
+.list1 ul, .list2 ul {
+    padding: 0 0 0 30px;
+    line-height: 28px;
+}
+
+h2 {
+    font-size: 14pt;
+    text-align: center;
+    color: lightslategray;
+}
+
+footer {
+    clear: both;
+    margin: 0 -320px;
+    /* Using Negative Margins to allow bttm border to fill scrn */
+    padding: 0 320px;
+    background-color: #666666;
+    text-align: center;
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 10px;
+    padding-top: 30px;
+    color: #cccccc;
+    font-weight: bold;
+    border-top: 8px solid #4aaaa5;
+    line-height: 20px;
+    position: relative;
+    top: 25px;
+    /* use absolute positioning to have it stick to the bottom of the page UPDATE- fixed with relative positioning, but with smaller page content will still be an issue*/
+}
+
+.posRel {
+    width: 900px;
+    margin: 0px 30px 0px 30px;
+}
+
+.itemBox {
+    display: inline-flex;
+    width: auto;
+    margin:4px 30px 34px 30px;
+    position: relative;
+}
+
+h3 {
+    position: absolute;
+    bottom: 0px;
+    width: 257px;
+    text-align: center;
+    margin-bottom: 8px;
+    padding: 10px 0px 10px 0px;
+    color: white;
+    background-color: #4aaaa5;
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+    font-weight: lighter;
+    font-size: 20px;
+}
+
+ /*using class to justify left edge of images             with the "Portfolio" header and bottom border*/
+ .left {
+    margin-left: 0px;
+}
+
+/*using class to justify right edge of images with
+the left edge of the container... could have used floats.... but oh well*/
+.right {
+    margin-right: 0px;
+}
+
+.formField {
+    width: 900px;
+    margin: 0px 30px 30px 30px;
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+    color: darkgrey;
+    font-weight: 130%;
+}
+
+input {
+    width: 900px;
+    padding: 7px 10px;
+    margin: 8px 0px;
+    box-sizing: border-box;
+    border: 1px solid #cccccc;
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+    color: slategray;
+    font-weight: 130%;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+textarea {
+    width: 900px;
+    height: 150px;
+    padding: 7px 10px;
+    margin: 8px 0px;
+    box-sizing: border-box;
+    border: 1px solid #cccccc;
+    resize: none;
+    text-align: start;
+    flex-direction: column;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+    color: slategray;
+    font-weight: 130%;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+input:focus {
+    outline: none; /*removes user style sheet "highlight box"*/
+    border: 2px solid darkgrey;
+}
+
+textarea:focus {
+    outline: none; /*removes user style sheet "highlight box"*/
+    border: 2px solid darkgrey;
+
+}
+
+input[type=submit] {
+    cursor: pointer;
+    color: white;
+    background: #4aaaa5;
+    padding: 4px 10px;
+    width: 100px;
+    text-align: center;
+}
+
+.flex-container {
+    display: flex;
+    position: fixed;
+    top: 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* what to do next
+    get the bottom of the menu bar to have a line
+    then move on to the main-content section */
+
+/* Helpful resources:
+working with full page elements https://css-tricks.com/full-browser-width-bars/ */
+
+
+
+
+
+
+
+/****OLD FIRST TRY CODE, DELETE ONCE IMPROVED
+
+* {
+    margin-top: 0px;
+    background-color: white;
+}
+
+#Name {
+    margin-top: 0px;
+    margin-left: 220px;
+    margin-right: 400px;
+    align-items: center;
+    background-color: aqua;
+    padding: 30px;
+    align-items: center;
+    display: inline-block;
+    font-family: 'Georgia', Times, Times New Roman, serif;
+}
+
+#Bar div {
+    display: inline-block;
+    border-bottom: 10px;
+    border-bottom-color: #e70c0c;
+   /*testing #
+}
+
+#Menu ul {
+    list-style-type: none;
+    display: inline-block;
+    background-color: grey;
+    font: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+    
+}
+
+#Menu li {
+    font-size: 120%;
+    list-style-type: none;
+    background-color: none;
+    padding-right: 20px;
+    align-items: center;
+    display: inline-block;
+    margin: 30px 20px 30px 20px;
+    border-right-color: slategrey;
+    border-right-style: solid;
+    border-right-width: 1px;
+    font: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+    top: 30px;
+    left: 40px;
+} */
+
+
+
+
