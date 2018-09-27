@@ -19,6 +19,8 @@ body {
     border-color: darkgrey;
     border-width: 0px 0px 1.5px 0px;
     background-color:white;
+    position: fixed;
+    top: 0px;
     z-index: 100;
 }
 
@@ -252,9 +254,7 @@ input[type=submit] {
 }
 
 .flex-container {
-    display: flex;
-    position: fixed;
-    top: 0px;
+
 }
 
 
