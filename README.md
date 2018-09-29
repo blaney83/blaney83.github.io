@@ -1,2 +1,1 @@
-# blaney83.github.io
-Profile and Portfolio Website
+# Basic-Portfolio
