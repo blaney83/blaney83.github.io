@@ -26,6 +26,13 @@ a.navbar-brand {
 .mainContent {
     margin-top: 100px;
     margin-bottom: 50px;
+    min-height: 80vh;
+    max-width: 960px;
+}
+
+.minVH {
+    min-height: 80vh;
+    max-width: 960px;
 }
 
 .mr-auto, .mx-auto {
@@ -95,13 +102,12 @@ label {
     color: rgba(21, 19, 19, 0.8)
 }
 
-
-@media screen and (min-width: 1200px) {
+/* @media screen and (min-width: 1200px) {
     .mainContent{
         margin-bottom: 200px;
     }
-    /*hack for getting footer to stay down*/
-}
+    /*antiquated hack for getting footer to stay down. Tradeoff is that mainContainer and minVH containers are now constrained to min/max VH dimensions. Leaving in in case needed in future.*/
+} */
 
 @media screen and (max-width: 768px) {
     .btn.btn-primary.btn-sm {
