@@ -1,86 +1,143 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Ben Laney</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="Assets/CSS/style.css" />
-    <script src="main.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Bootstrap Portfolio</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Assets/CSS/style.css">
 </head>
 
 <body>
-    <div class="flex-container">
 
-        <div class="name">
-            <header>Ben Laney</header>
-        </div>
+    <nav class="navbar fixed-top navbar-expand-sm navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">Ben Laney</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-        <div class="pages">
-            <ul class="Menu">
-                <li id="rightborder">
-                    <a href="index.html">About</a>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active justify-content-end">
+                    <a class="nav-link" href="index.html">About <span class="sr-only">(current)</span></a>
                 </li>
-                <li id="rightborder">
-                    <a href="portfolio.html">Portfolio</a>
+                <li class="nav-item active justify-content-end">
+                    <a class="nav-link" href="portfolio.html">Portfolio</a>
                 </li>
-                <li>
-                    <a href="contact.html">Contact</a>
+                <li class="nav-item active justify-content-end">
+                    <a class="nav-link active" href="contact.html">Connect</a>
                 </li>
             </ul>
         </div>
+    </nav>
 
-    </div>
-    <!--top content bar-->
+    <div class="container mainContent">
+        <div class="row align-item-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h2>Portfolio</h2>
+                    </div>
+                </div>
 
-    <div class="main-content">
+                <div class="row portCol">
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="card" style="width:100%">
+                            <img class="card-img-top" src="http://placehold.it/257x209" alt="Card image">
+                            <div class="card-img-overlay">
+                                <a href="#" class="btn btn-primary btn-sm">Project Name</a>
+                            </div>
+                        </div>
+                        <div class="card" style="width:100%">
+                            <img class="card-img-top" src="http://placehold.it/257x209" alt="Card image">
+                            <div class="card-img-overlay">
+                                <a href="#" class="btn btn-primary btn-sm">Project Name</a>
+                            </div>
+                        </div>
+                        <div class="card" style="width:100%">
+                            <img class="card-img-top" src="http://placehold.it/257x209" alt="Card image">
+                            <div class="card-img-overlay">
+                                <a href="#" class="btn btn-primary btn-sm">Project Name</a>
+                            </div>
+                        </div>
 
-        <header class="about margCorrect">Portfolio</header>
+                    </div>
 
-        <div class="posRel">
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="card" style="width:100%">
+                            <img class="card-img-top" src="http://placehold.it/257x209" alt="Card image">
+                            <div class="card-img-overlay">
+                                <a href="#" class="btn btn-primary btn-sm">Project Name</a>
+                            </div>
+                        </div>
+                        <div class="card" style="width:100%">
+                            <img class="card-img-top" src="http://placehold.it/257x209" alt="Card image">
+                            <div class="card-img-overlay">
+                                <a href="#" class="btn btn-primary btn-sm">Project Name</a>
+                            </div>
+                        </div>
+                        <div class="card" style="width:100%">
+                            <img class="card-img-top" src="http://placehold.it/257x209" alt="Card image">
+                            <div class="card-img-overlay">
+                                <a href="#" class="btn btn-primary btn-sm">Project Name</a>
+                            </div>
+                        </div>
 
-            <div class="itemBox left one">
-                <h3>Title for Image</h3>
-                <img src="http://placehold.it/257x209" alt="Title for Image">
-            </div>
+                    </div>
 
-            <div class="itemBox two">
-                <h3>Title for Image</h3>
-                <img src="http://placehold.it/257x209" alt="Title for Image">
-            </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="card" style="width:100%">
+                            <img class="card-img-top" src="http://placehold.it/257x209" alt="Card image">
+                            <div class="card-img-overlay">
+                                <a href="#" class="btn btn-primary btn-sm">Project Name</a>
+                            </div>
+                        </div>
+                        <div class="card" style="width:100%">
+                            <img class="card-img-top" src="http://placehold.it/257x209" alt="Card image">
+                            <div class="card-img-overlay">
+                                <a href="#" class="btn btn-primary btn-sm">Project Name</a>
+                            </div>
+                        </div>
+                        <div class="card" style="width:100%">
+                            <img class="card-img-top" src="http://placehold.it/257x209" alt="Card image">
+                            <div class="card-img-overlay">
+                                <a href="#" class="btn btn-primary btn-sm">Project Name</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="itemBox right one">
-                <h3>Title for Image</h3>
-                <img src="http://placehold.it/257x209" alt="Title for Image">
-            </div>
-
-            <div class="itemBox left two">
-                <h3>Title for Image</h3>
-                <img src="http://placehold.it/257x209" alt="Title for Image">
-            </div>
-
-            <div class="itemBox one">
-                <h3>Title for Image</h3>
-                <img src="http://placehold.it/257x209" alt="Title for Image">
-            </div>
-
-            <div class="itemBox right two">
-                <h3>Title for Image</h3>
-                <img src="http://placehold.it/257x209" alt="Title for Image">
-            </div>
-
-            <div class="itemBox left one">
-                <h3>Title for Image</h3>
-                <img src="http://placehold.it/257x209" alt="Title for Image">
             </div>
 
         </div>
 
     </div>
-    <!--"main-content" box-->
+    <!--portfolio container-->
+    </div>
+    <!--main content row-->
+    </div>
+    <!--.mainContent container-->
 
-    <footer> Copyright 2018 </footer>
+    <nav class="navbar navbar-light bg-light justify-content-center footer">
+        <span class="navbar-text">
+            Copyright 2018
+        </span>
+    </nav>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
 </body>
 
 </html>

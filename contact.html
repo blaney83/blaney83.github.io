@@ -1,60 +1,118 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Ben Laney</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="Assets/CSS/style.css" />
-    <script src="main.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Bootstrap Portfolio</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Assets/CSS/style.css">
 </head>
 
 <body>
-    <div class="flex-container">
 
-        <div class="name">
-            <header>Ben Laney</header>
-        </div>
+    <nav class="navbar fixed-top navbar-expand-sm navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">Ben Laney</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-        <div class="pages">
-            <ul class="Menu">
-                <li id="rightborder">
-                    <a href="index.html">About</a>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active justify-content-end">
+                    <a class="nav-link" href="index.html">About <span class="sr-only">(current)</span></a>
                 </li>
-                <li id="rightborder">
-                    <a href="portfolio.html">Portfolio</a>
+                <li class="nav-item active justify-content-end">
+                    <a class="nav-link" href="portfolio.html">Portfolio</a>
                 </li>
-                <li>
-                    <a href="contact.html">Contact</a>
+                <li class="nav-item active justify-content-end">
+                    <a class="nav-link active" href="contact.html">Connect</a>
                 </li>
             </ul>
         </div>
+    </nav>
 
-    </div>
-    <!--top content bar -->
+    <div class="container mainContent">
+        <div class="row align-item-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h2>Contact</h2>
+                    </div>
+                </div>
 
-    <div class="main-content">
+                <div class="row formChunk">
+                    <div class="col-12 main">
+                        <form>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Name</label>
+                                <input type="name" class="form-control" id="exampleInputPassword1" placeholder="Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email address</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                                    placeholder="Enter email">
+                                <small id="emailHelp" class="form-text text-muted">We won't sell your information unless we get a good price for it.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Message</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1">Rate my coding ability (1-5)</label>
+                                <select class="form-control" id="exampleFormControlSelect1">
+                                    <option>5</option>
+                                    <option>5</option>
+                                    <option>5</option>
+                                    <option>5</option>
+                                    <option>5</option>
+                                    <option>5</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>6</option>
+                                    <option>6</option>
+                                    <option>6</option>
+                                    <option>6</option>
+                                    <option>Incredible</option>
+                                </select>
+                            </div>
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">I am not a robot... unless you are and then thats pretty cool.</label>
+                            </div>
+                            <button type="send" class="btn btn-primary sendButton">Send</button>
+                        </form>
 
-        <header class="about">Contact</header>
-
-        <div class="formField">
-            <form method="post">
-                <!--need to add code for sending email. place (action="email_code.php" target="self") after form-->
-                Name <br>
-                <input type="text" name="name" value="John Smith"><br>
-                Email <br>
-                <input type="email" name="email" value="Example@gmail.com"><br>
-                Message <br>
-                <textarea type="message" name="message">Type here</textarea><br><br>
-                <input type="submit" value="submit">
-            </form>
+                    </div>
+                    <!--form column div-->
+                </div>
+                <!--form row-->
+            </div>
+            <!--contact container-->
         </div>
+        <!--main content row-->
+    </div>
+    <!--.mainContent container-->
 
-    </div>
-    </div>
-    <!--"main-content" box-->
-    <footer> Copyright 2018 </footer>
+    <nav class="navbar navbar-light bg-light justify-content-center footer">
+        <span class="navbar-text">
+            Copyright 2018
+        </span>
+    </nav>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
 </body>
 
 </html>
