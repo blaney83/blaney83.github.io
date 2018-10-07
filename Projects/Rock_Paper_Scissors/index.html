@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Practice Rock Paper Scissors</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <style>
+        body {
+            align-content: center;
+            max-width: auto;
+            margin: auto;
+        }
+        h1 {
+            font-weight: bolder;
+            color: rgb(107, 107, 107);
+            border-radius: 10px;
+            margin: 0px;
+            background-color: rgb(209, 209, 209);
+            border-top-style: solid;
+            border-left-style: solid;
+            border-right-style: solid;
+            border-width: 10px;
+            border-color: darkgrey;
+            border-top-left-radius: 1.5rem;
+            border-top-right-radius: 1.5rem;
+        }
+        h4 {
+            background-color: slategray;
+            color: lightgray;
+            margin: 0px;
+            padding: 20px auto;
+            border-bottom-style: solid;
+            border-left-style: solid;
+            border-right-style: solid;
+            border-width: 10px;
+            border-color: darkgrey;
+            border-bottom-left-radius: 1.5rem;
+            border-bottom-right-radius: 1.5rem;
+        }
+        .con1 {
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            height: 100%;
+            background-color: rgba(40, 255, 172, 0.959);
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            border-radius: 1rem;
+        }
+        .con2 {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        btn {
+            font-size: 20px;
+            padding: .5rem;
+            margin-top: 2rem;
+            color: white;
+            background-color: black;
+            border-style: solid;
+            border-color: lightgrey;
+            border-radius: 5px;
+        }
+        p {
+            font-size: 20px;
+            margin: 3px;
+        }
+        .table{
+            border-radius: 2rem;
+        }
+        .table tr:first-child th {
+            border-top: 0;
+        }
+        th {
+            color: white;
+        }
+        tr {
+            color: white;
+        }
+        lower {
+            padding-top: 0%;
+        }
+        #winner {
+            font-weight: bolder;
+            color: darkgreen;
+            font-style: italic;
+            font-variant-caps: normal;
+            font-size: 30px;
+
+            
+        }
+    </style>
+</head>
+
+<body style="background-image:url('Assets/background.jpg')">
+    <div class="container con1">
+        <div class="row">
+            <div class="col text-center">
+                <h1>WELCOME TO ROCK, PAPER, SCISSORS!</h1>
+                <h4>What's your high win streak?</h4>
+                <div class="container con2">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6 col-4">
+                            <btn class="firstMove" id="rock">rock</btn>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-4">
+                            <btn class="firstMove" id="paper">paper</btn>
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-4">
+                            <btn class="firstMove" id="scissors">scissors</btn>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <p>Winner is ... <span id="winner"></span></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-6">
+                <p>Player Move= <span id="playerGuess">0</span></p>
+            </div>
+            <div class="col-md-12 col-6">
+                <p>Computer Move= <span id="computerGuess">0</span></p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <table class="table table-dark table-responsive-md">
+                        <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">WINS</th>
+                                <th scope="col">LOSSES</th>
+                                <th scope="col">TIES</th>
+                                <th scope="col">WIN %</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">PLAYER</th>
+                                <td><span id="playerScore"></span></td>
+                                <td><span id="playerLosses"></span></td>
+                                <td><span id="ties"></span></td>
+                                <td><span id="winPerc"></span>%</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">COMPUTER</th>
+                                <td><span id="compScore"></span></td>
+                                <td><span id="compLosses"></span></td>
+                                <td><span id="tiesC"></span></td>
+                                <td><span id="lossPerc"></span>%</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">ROCK</th>
+                                <td><span id="rockWins"></span></td>
+                                <td><span id="rockLosses"></span></td>
+                                <td><span id="rockTies"></span></td>
+                                <td><span id="rockPerc"></span>%</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">PAPER</th>
+                                <td><span id="paperWins"></span></td>
+                                <td><span id="paperLosses"></span></td>
+                                <td><span id="paperTies"></span></td>
+                                <td><span id="paperPerc"></span>%</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">SCISSORS</th>
+                                <td><span id="scissorWins"></span></td>
+                                <td><span id="scissorLosses"></span></td>
+                                <td><span id="scissorTies"></span></td>
+                                <td><span id="scisPerc"></span>%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="container lower">
+            <div class="row">
+                <div class="col-4">
+                    <p>Total Games: <span id="totalGames">0</span></p>
+                </div>
+                <div class="col-4">
+                    <p>Win Streak: <span id="winStreak">0</span></p>
+                </div>
+                <div class="col-4">
+                    <p>High Streak: <span id="highStreak">0</span></p>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+
+            var choice = ["rock", "paper", "scissors"]
+            var cChoice = choice[Math.floor(Math.random() * choice.length)];
+            var userChoice;
+            var btns = document.getElementsByClassName("firstMove");
+            var compScore = 0;
+            var ties = 0;
+            var playerScore = 0;
+            var prevScore = 0;
+            var rockWins = 0;
+            var rockLosses = 0;
+            var winStreak = 0;
+            var rockTies = 0;
+            var streakCounter = true;
+            var paperWins = 0;
+            var paperLosses = 0;
+            var paperTies = 0;
+            var scissorsWins = 0;
+            var scissorsLosses = 0;
+            var scissorsTies = 0;
+            var games = 0;
+            var hsArr = [];
+
+            //definitely make objects next time. what a waste of space.
+            //also, global variables are not a good idea in this context (score counters)
+
+            for (var i = 0; i < btns.length; i++) {
+                console.log(btns.length);
+                btns[i].addEventListener("click", function (e) {
+                    document.getElementById("playerGuess").innerHTML = e.target.id;
+                    userChoice = e.target.id;
+                    cChoice = choice[Math.floor(Math.random() * choice.length)];
+                    document.getElementById("computerGuess").innerHTML = cChoice;
+                    games++;
+                    computerChoice();
+                });
+            }
+
+            function computerChoice(event) {
+                function streak(x) {
+                    return (x)
+                };
+                if (userChoice === cChoice) {
+                    document.getElementById("winner").innerHTML = "It's a Tie!";
+                    ties = ties + 1;
+                    winStreak = 0;
+                    if (userChoice === "rock") {
+                        rockTies++;
+                        document.getElementById("rockTies").innerHTML = rockTies;
+                    };
+                    if (userChoice === "paper") {
+                        paperTies++;
+                        document.getElementById("paperTies").innerHTML = paperTies;
+                    };
+                    if (userChoice === "scissors") {
+                        scissorsTies++;
+                        document.getElementById("scissorTies").innerHTML = scissorsTies;
+                    };
+                    streakCounter = false;
+                    document.getElementById("ties").innerHTML = ties;
+                    document.getElementById("tiesC").innerHTML = ties;
+                    document.getElementById("winStreak").innerHTML = winStreak;
+                } else if ((userChoice === "rock" && cChoice === "paper") ||
+                    (userChoice === "paper" && cChoice === "scissors") ||
+                    (userChoice === "scissors" && cChoice === "rock")) {
+                    compScore++;
+                    streakCounter = false;
+                    winStreak = 0
+                    document.getElementById("winner").innerHTML = "Computer...";
+                    document.getElementById("playerLosses").innerHTML = compScore;
+                    document.getElementById("compScore").innerHTML = compScore;
+                    document.getElementById("winStreak").innerHTML = winStreak;
+                    if (userChoice === "rock") {
+                        rockLosses++;
+                        document.getElementById("rockLosses").innerHTML = rockLosses;
+                    };
+                    if (userChoice === "paper") {
+                        paperLosses++;
+                        document.getElementById("paperLosses").innerHTML = paperLosses;
+                    };
+                    if (userChoice === "scissors") {
+                        scissorsLosses++;
+                        document.getElementById("scissorLosses").innerHTML = scissorsLosses
+                    };
+                } else {
+                    winStreak++;
+                    if (userChoice === "rock") {
+                        rockWins++;
+                        document.getElementById("rockWins").innerHTML = rockWins;
+                    };
+                    if (userChoice === "paper") {
+                        paperWins++;
+                        document.getElementById("paperWins").innerHTML = paperWins;
+                    };
+                    if (userChoice === "scissors") {
+                        scissorsWins++;
+                        document.getElementById("scissorWins").innerHTML = scissorsWins;
+                    };
+                    playerScore++;
+                    document.getElementById("winner").innerHTML = "Player!";
+                    document.getElementById("playerScore").innerHTML = playerScore;
+                    document.getElementById("compLosses").innerHTML = playerScore;
+                    document.getElementById("winStreak").innerHTML = winStreak;
+                    if (streakCounter === true) {
+                        hsArr.push(parseInt(winStreak));
+                        console.log(hsArr)
+                        hsArr.sort(function (a, b) { return b - a });
+                        document.getElementById("highStreak").innerHTML = hsArr[0]
+                    }
+                    streakCounter = true;
+                };
+                games = games++;
+                document.getElementById("totalGames").innerHTML = games;
+                winPerc = (playerScore / games) * 100;
+                document.getElementById("winPerc").innerHTML = winPerc;
+                lossPerc = (100 - winPerc)
+                document.getElementById("lossPerc").innerHTML = lossPerc;
+                rockPerc = (rockWins / (rockLosses + rockTies) * 100)
+                document.getElementById("rockPerc").innerHTML = rockPerc;
+                paperPerc = (paperWins / (paperLosses + paperTies) * 100)
+                document.getElementById("paperPerc").innerHTML = paperPerc;
+                scisPerc = (scissorsWins / (scissorsLosses + scissorsTies) * 100)
+                document.getElementById("scisPerc").innerHTML = scisPerc;
+            }
+        </script>
+    </div>
+</body>
+</html>
