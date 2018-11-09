@@ -20,9 +20,7 @@ a.navbar-brand {
     width: 15rem;
     height: auto;
     margin: auto 1em 1em auto;
-    border-radius: 1rem;
-    height: 100% !important;
-
+    border-radius: .5rem;
 }
 
 .mainContent {
@@ -74,9 +72,8 @@ color: rgba(21, 19, 19, 0.65);
 
 .card {
     position: relative;
-    margin-bottom: 3% !important;
-    /* margin-top: 5% !important; */
-    height: 30% !important;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
 }
 
 .card-img-overlay {
@@ -110,7 +107,7 @@ label {
         margin-bottom: 200px;
     }
     /*antiquated hack for getting footer to stay down. Tradeoff is that mainContainer and minVH containers are now constrained to min/max VH dimensions. Leaving in in case needed in future.*/
-/* } */ 
+} */
 
 @media screen and (max-width: 768px) {
     .btn.btn-primary.btn-sm {
@@ -146,4 +143,3 @@ label {
     }
 
 }
-
