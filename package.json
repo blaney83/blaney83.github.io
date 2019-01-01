@@ -2,6 +2,7 @@
   "name": "app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://blaney83.github.io",
   "dependencies": {
     "@material-ui/core": "^3.7.1",
     "@material-ui/icons": "^3.0.1",
@@ -10,6 +11,7 @@
     "chartist": "^0.11.0",
     "create-react-app": "^2.0.5-next.c662dfb0",
     "express": "^4.16.4",
+    "gh-pages": "^2.0.1",
     "moment": "^2.23.0",
     "react": "16.7.0-alpha.2",
     "react-chartist": "^0.13.1",
@@ -26,11 +28,12 @@
     "redux-persist": "^5.10.0"
   },
   "scripts": {
-    "start": "node server.js",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "-gh-pages -d build"
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -b master -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
