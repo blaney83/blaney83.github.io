@@ -1,0 +1,16 @@
+body {
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 0px !important
+}
+/* 
+@media only screen and (min-width: 1000px) {
+    body {
+      zoom: 2
+  }
+} */
+.Main {
+    height: 0px
+}
