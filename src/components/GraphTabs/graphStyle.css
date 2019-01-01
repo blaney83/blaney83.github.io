@@ -24,11 +24,11 @@ svg.ct-chart-bar, svg.ct-chart-line{
 }
 
 .ct-series-a .ct-area{
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-  animation: dash 3s linear alternate infinite;
+  stroke-dasharray: 500;
+  stroke-dashoffset: 0;
+  animation: dash 5s ease-in-out forwards infinite;
   stroke: #d81b1b;
-  animation-fill-mode: forwards;
+  animation-fill-mode: none;
   fill: #d81b1b
 }
 
