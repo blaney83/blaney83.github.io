@@ -77,25 +77,26 @@ const styles = theme => ({
         paddingTop: "30px",
     },
     contactHeader: {
-        backgroundImage: "url('" + bgImage3 + "')",
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        "-webkit-background-size": "cover",
-        "-moz-background-size": "cover",
-        "-o-background-size": "cover",
-        backgroundSize: 'cover',
-        backgroundAttachment: 'scroll',
-        [theme.breakpoints.up('sm')]: {
-            backgroundAttachment: 'fixed',
-        },
-        "-webkit-background-clip": "text",
-        backgroundClip: "text",
-        color: "transparent",
+        color: "white",
         textAlign: "center",
-        filter: "invert(0) grayscale(1) contrast(9)",
-        fontSize: "3rem",
-        marginBottom: "0px",
+        fontSize: "4rem",
+        marginBottom: "2rem",
         [theme.breakpoints.up('sm')]: {
+            backgroundImage: "url('" + bgImage3 + "')",
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            "-webkit-background-size": "cover",
+            "-moz-background-size": "cover",
+            "-o-background-size": "cover",
+            backgroundSize: 'cover',
+            backgroundAttachment: 'scroll',
+            [theme.breakpoints.up('sm')]: {
+                backgroundAttachment: 'fixed',
+            },
+            "-webkit-background-clip": "text",
+            backgroundClip: "text",
+            color: "transparent",
+            filter: "invert(0) grayscale(1) contrast(9)",
             fontSize: "4rem",
             // marginTop: "-2rem",
             paddingBottom: "2rem",
@@ -107,7 +108,7 @@ const styles = theme => ({
             // marginBottom: "0px"
         },
         [theme.breakpoints.up('lg')]: {
-            fontSize: "8rem",
+            fontSize: "6rem",
             // marginBottom: "0px"
         },
         [theme.breakpoints.up('xl')]: {

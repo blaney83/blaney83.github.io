@@ -113,7 +113,7 @@ const styles = theme => ({
             // marginBottom: "0px"
         },
         [theme.breakpoints.up('lg')]: {
-            fontSize: "8rem",
+            fontSize: "7rem",
             // marginBottom: "0px"
         },
         [theme.breakpoints.up('xl')]: {

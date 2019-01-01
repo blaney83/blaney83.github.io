@@ -83,7 +83,8 @@ const styles = theme => ({
         color: "transparent",
         textAlign: "center",
         filter: "invert(1) grayscale(1) contrast(9)",
-        fontSize: "3rem",
+        fontSize: "4rem",
+        marginBottom: "2rem",
         [theme.breakpoints.up('sm')]: {
             fontSize: "4rem",
             marginBottom: "1rem",
@@ -94,7 +95,7 @@ const styles = theme => ({
             // marginBottom: "0px"
         },
         [theme.breakpoints.up('lg')]: {
-            fontSize: "8rem",
+            fontSize: "6rem",
             // marginBottom: "0px"
         },
         [theme.breakpoints.up('xl')]: {

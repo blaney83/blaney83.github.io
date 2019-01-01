@@ -92,18 +92,19 @@ const styles = theme => ({
         color: "transparent",
         textAlign: "center",
         filter: "invert(1) grayscale(1) contrast(9)",
-        fontSize: "3rem",
+        fontSize: "4rem",
+        marginBottom: "2rem",
         [theme.breakpoints.up('sm')]: {
             fontSize: "4rem",
-            marginBottom: "1rem",
             // marginBottom: "0px"
+            marginBottom: "0px"
         },
         [theme.breakpoints.up('md')]: {
             fontSize: "5rem",
             // marginBottom: "0px"
         },
         [theme.breakpoints.up('lg')]: {
-            fontSize: "8rem",
+            fontSize: "5rem",
             // marginBottom: "0px"
         },
         [theme.breakpoints.up('xl')]: {
@@ -156,6 +157,9 @@ const styles = theme => ({
     rightIcon: {
         fontSize: "2rem",
         marginLeft: "1rem"
+    },
+    portfolioWrapper: {
+        height: "90%"
     }
 })
 
@@ -231,7 +235,9 @@ function Page3(props) {
                                 <Tab label="Practice" onClick={() => props.setPortfolioSort( portSortAction, 2)} />
                             </Tabs>
                         </AppBar>
-                        <Portfolio sort={props.portfolioSort} ></Portfolio>
+                        <div className={classes.portfolioWrapper}>
+                            <Portfolio sort={props.portfolioSort} ></Portfolio>
+                        </div>
                         <IconButton>
                             <Left className={classes.leftIcon} onClick={scrollPortfolioLeft} onMouseDown={mousedownL} onMouseUp={mouseupL} />
                         </IconButton>
