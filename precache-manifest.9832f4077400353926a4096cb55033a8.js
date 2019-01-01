@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/static/media/10travel.e5195930.jpg"
   },
   {
-    "revision": "46fa97043404acbfe6f9",
-    "url": "/static/css/main.979a9b38.chunk.css"
+    "revision": "da963862629d3e083efa",
+    "url": "/static/css/main.bd80c3d5.chunk.css"
   },
   {
     "revision": "1b07a96d8e1e37227e97",
@@ -88,8 +88,8 @@ self.__precacheManifest = [
     "url": "/static/media/9liri.d369c9fb.jpg"
   },
   {
-    "revision": "46fa97043404acbfe6f9",
-    "url": "/static/js/main.46fa9704.chunk.js"
+    "revision": "da963862629d3e083efa",
+    "url": "/static/js/main.da963862.chunk.js"
   },
   {
     "revision": "374fdeaca125ab8891c68e55805a48e3",
@@ -172,7 +172,7 @@ self.__precacheManifest = [
     "url": "/static/media/email.f3bb6e1f.svg"
   },
   {
-    "revision": "2310163836d167f1acc092f6536621a7",
+    "revision": "b237a9e4d586ac94a22157673c7dfd6a",
     "url": "/index.html"
   }
 ];
