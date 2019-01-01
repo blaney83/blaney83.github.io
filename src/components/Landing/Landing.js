@@ -4,6 +4,9 @@ import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import bgImage from "../../assets/img/stars.jpg"
 import ScrollableAnchor from 'react-scrollable-anchor'
+import Particles from "react-particles-js"
+const PartParams = require("./particles.json")
+
 
 const styles = theme => ({
     landingPage: {
@@ -23,6 +26,16 @@ const styles = theme => ({
         },
         zIndex: "-1",
         pointerEvents: "auto"
+    },
+    particleDiv: {
+        position: "absolute",
+        height: "133vh",
+        width: "100vw",
+        top: "0px",
+        left: "0px",
+        pointerEvents: "none",
+        zIndex: "0",
+
     },
     mainTitle: {
         background: "inherit",
@@ -65,6 +78,10 @@ function Landing(props) {
         <ScrollableAnchor id={'home'}>
         <div className={classes.landingPage} id="landingPage">
             <Typography variant="h2" className={classes.mainTitle}>Ben Laney</Typography>
+            <Particles
+                        className={classes.particleDiv}
+                        params={PartParams}
+                    />
         </div>
         </ScrollableAnchor>
     )

@@ -135,7 +135,8 @@ const styles = theme => ({
     },
     heading: {
         color: "white",
-        transition: theme.transitions.create(['color', 'fontSize'], {
+        fontSize: "initial",
+        transition: theme.transitions.create("fontSize", {
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.leavingScreen,
         }),
@@ -181,7 +182,12 @@ const styles = theme => ({
         minHeight: "10px"
     },
     summaryContent: {
-        margin: "6px 0px"
+        margin: "6px 0px",
+        height: " initial",
+        transition: theme.transitions.create(['height', 'margin'], {
+            easing: theme.transitions.easing.sharp,
+            duration: theme.transitions.duration.leavingScreen,
+        }),
     },
     summaryContentHidden: {
         height: " 0px",
@@ -191,8 +197,19 @@ const styles = theme => ({
             duration: theme.transitions.duration.leavingScreen,
         }),
     },
+    iconInitial: {
+        height: "initial",
+        transition: theme.transitions.create('height', {
+            easing: theme.transitions.easing.sharp,
+            duration: theme.transitions.duration.leavingScreen,
+        }),
+    },
     iconHidden: {
-        height: "0px"
+        height: "0px",
+        transition: theme.transitions.create('height', {
+            easing: theme.transitions.easing.sharp,
+            duration: theme.transitions.duration.leavingScreen,
+        }),
     },
     panelDetailsContainer: {
         padding: "5px 5px 10px",
@@ -253,7 +270,7 @@ class Page1 extends React.Component {
                                     <CardContent className={classes.cardContent}>
                                         <div className={classes.root}>
                                             <ExpansionPanel expanded={this.state.expanded === "panel1"} className={classes.paperStyle} >
-                                                <ExpansionPanelSummary classes={{ content: this.state.expanded === "" || this.state.expanded === "panel1" ? classes.summaryContent : classes.summaryContentHidden }} className={classes.expansionSummary} onClick={() => this.togglePanel("panel1", this.state.expanded)} expandIcon={<ExpandMoreIcon classes={{ root: this.state.expanded === "" || this.state.expanded === "panel1" ? null : classes.iconHidden }} className={classes.expandIcons} color="secondary" />}>
+                                                <ExpansionPanelSummary classes={{ content: this.state.expanded === "" || this.state.expanded === "panel1" ? classes.summaryContent : classes.summaryContentHidden }} className={classes.expansionSummary} onClick={() => this.togglePanel("panel1", this.state.expanded)} expandIcon={<ExpandMoreIcon classes={{ root: this.state.expanded === "" || this.state.expanded === "panel1" ? classes.iconInitial : classes.iconHidden }} className={classes.expandIcons} color="secondary" />}>
                                                     <Typography className={this.state.expanded === "" || this.state.expanded === "panel1" ? classes.heading : classes.headingHidden}>Intro</Typography>
                                                 </ExpansionPanelSummary>
                                                 <ExpansionPanelDetails classes={{root: classes.panelDetailsContainer}}>
@@ -264,7 +281,7 @@ class Page1 extends React.Component {
                                             </ExpansionPanel>
                                             {/* </div> */}
                                             <ExpansionPanel expanded={this.state.expanded === 'panel2'} className={classes.paperStyle}>
-                                                <ExpansionPanelSummary classes={{ content: this.state.expanded === "" || this.state.expanded === "panel2" ? classes.summaryContent : classes.summaryContentHidden }} className={classes.expansionSummary} onClick={() => this.togglePanel("panel2", this.state.expanded)} expandIcon={<ExpandMoreIcon classes={{ root: this.state.expanded === "" || this.state.expanded === "panel2" ? null : classes.iconHidden }} className={classes.expandIcons} color="secondary" />}>
+                                                <ExpansionPanelSummary classes={{ content: this.state.expanded === "" || this.state.expanded === "panel2" ? classes.summaryContent : classes.summaryContentHidden }} className={classes.expansionSummary} onClick={() => this.togglePanel("panel2", this.state.expanded)} expandIcon={<ExpandMoreIcon classes={{ root: this.state.expanded === "" || this.state.expanded === "panel2" ? classes.iconInitial : classes.iconHidden }} className={classes.expandIcons} color="secondary" />}>
                                                     <Typography className={this.state.expanded === "" || this.state.expanded === "panel2" ? classes.heading : classes.headingHidden}>Personal Background</Typography>
                                                     <Typography className={classes.secondaryHeading}>
                                                         {/* You are currently not an owner */}
@@ -277,7 +294,7 @@ class Page1 extends React.Component {
                                                 </ExpansionPanelDetails>
                                             </ExpansionPanel>
                                             <ExpansionPanel expanded={this.state.expanded === 'panel3'} className={classes.paperStyle}>
-                                                <ExpansionPanelSummary classes={{ content: this.state.expanded === "" || this.state.expanded === "panel3" ? classes.summaryContent : classes.summaryContentHidden }} className={classes.expansionSummary} onClick={() => this.togglePanel("panel3", this.state.expanded)} expandIcon={<ExpandMoreIcon classes={{ root: this.state.expanded === "" || this.state.expanded === "panel3" ? null : classes.iconHidden }} className={classes.expandIcons} color="secondary" />}>
+                                                <ExpansionPanelSummary classes={{ content: this.state.expanded === "" || this.state.expanded === "panel3" ? classes.summaryContent : classes.summaryContentHidden }} className={classes.expansionSummary} onClick={() => this.togglePanel("panel3", this.state.expanded)} expandIcon={<ExpandMoreIcon classes={{ root: this.state.expanded === "" || this.state.expanded === "panel3" ? classes.iconInitial : classes.iconHidden }} className={classes.expandIcons} color="secondary" />}>
                                                     <Typography className={this.state.expanded === "" || this.state.expanded === "panel3" ? classes.heading : classes.headingHidden}>Educational Background</Typography>
                                                     <Typography className={classes.secondaryHeading}>
                                                     </Typography>
@@ -289,7 +306,7 @@ class Page1 extends React.Component {
                                                 </ExpansionPanelDetails>
                                             </ExpansionPanel>
                                             <ExpansionPanel expanded={this.state.expanded === 'panel4'} className={classes.paperStyle}>
-                                                <ExpansionPanelSummary classes={{ content: this.state.expanded === "" || this.state.expanded === "panel4" ? classes.summaryContent : classes.summaryContentHidden }} className={classes.expansionSummary} onClick={() => this.togglePanel("panel4", this.state.expanded)} expandIcon={<ExpandMoreIcon classes={{ root: this.state.expanded === "" || this.state.expanded === "panel4" ? null : classes.iconHidden }} className={classes.expandIcons} color="secondary" />}>
+                                                <ExpansionPanelSummary classes={{ content: this.state.expanded === "" || this.state.expanded === "panel4" ? classes.summaryContent : classes.summaryContentHidden }} className={classes.expansionSummary} onClick={() => this.togglePanel("panel4", this.state.expanded)} expandIcon={<ExpandMoreIcon classes={{ root: this.state.expanded === "" || this.state.expanded === "panel4" ? classes.iconInitial : classes.iconHidden }} className={classes.expandIcons} color="secondary" />}>
                                                     <Typography className={this.state.expanded === "" || this.state.expanded === "panel4" ? classes.heading : classes.headingHidden}>Professional Background</Typography>
                                                 </ExpansionPanelSummary>
                                                 <ExpansionPanelDetails classes={{root: classes.panelDetailsContainer}}>
@@ -299,7 +316,7 @@ class Page1 extends React.Component {
                                                 </ExpansionPanelDetails>
                                             </ExpansionPanel>
                                             <ExpansionPanel expanded={this.state.expanded === 'panel5'} className={classes.paperStyle}>
-                                                <ExpansionPanelSummary classes={{ content: this.state.expanded === "" || this.state.expanded === "panel5" ? classes.summaryContent : classes.summaryContentHidden }} className={classes.expansionSummary} onClick={() => this.togglePanel("panel5", this.state.expanded)} expandIcon={<ExpandMoreIcon classes={{ root: this.state.expanded === "" || this.state.expanded === "panel5" ? null : classes.iconHidden }} className={classes.expandIcons} color="secondary" />}>
+                                                <ExpansionPanelSummary classes={{ content: this.state.expanded === "" || this.state.expanded === "panel5" ? classes.summaryContent : classes.summaryContentHidden }} className={classes.expansionSummary} onClick={() => this.togglePanel("panel5", this.state.expanded)} expandIcon={<ExpandMoreIcon classes={{ root: this.state.expanded === "" || this.state.expanded === "panel5" ? classes.iconInitial : classes.iconHidden }} className={classes.expandIcons} color="secondary" />}>
                                                     <Typography className={this.state.expanded === "" || this.state.expanded === "panel5" ? classes.heading : classes.headingHidden}>Personal Interests</Typography>
                                                 </ExpansionPanelSummary>
                                                 <ExpansionPanelDetails classes={{root: classes.panelDetailsContainer}}>
@@ -309,7 +326,7 @@ class Page1 extends React.Component {
                                                 </ExpansionPanelDetails>
                                             </ExpansionPanel>
                                             <ExpansionPanel expanded={this.state.expanded === 'panel6'} className={classes.paperStyle}>
-                                                <ExpansionPanelSummary classes={{ content: this.state.expanded === "" || this.state.expanded === "panel6" ? classes.summaryContent : classes.summaryContentHidden }} className={classes.expansionSummary} onClick={() => this.togglePanel("panel6", this.state.expanded)} expandIcon={<ExpandMoreIcon classes={{ root: this.state.expanded === "" || this.state.expanded === "panel6" ? null : classes.iconHidden }} className={classes.expandIcons} color="secondary" />}>
+                                                <ExpansionPanelSummary classes={{ content: this.state.expanded === "" || this.state.expanded === "panel6" ? classes.summaryContent : classes.summaryContentHidden }} className={classes.expansionSummary} onClick={() => this.togglePanel("panel6", this.state.expanded)} expandIcon={<ExpandMoreIcon classes={{ root: this.state.expanded === "" || this.state.expanded === "panel6" ? classes.iconInitial : classes.iconHidden }} className={classes.expandIcons} color="secondary" />}>
                                                     <Typography className={this.state.expanded === "" || this.state.expanded === "panel6" ? classes.heading : classes.headingHidden}>Professional Interests</Typography>
                                                 </ExpansionPanelSummary>
                                                 <ExpansionPanelDetails classes={{root: classes.panelDetailsContainer}}>
@@ -319,7 +336,7 @@ class Page1 extends React.Component {
                                                 </ExpansionPanelDetails>
                                             </ExpansionPanel>
                                             <ExpansionPanel expanded={this.state.expanded === 'panel7'} className={classes.paperStyle}>
-                                                <ExpansionPanelSummary classes={{ content: this.state.expanded === "" || this.state.expanded === "panel7" ? classes.summaryContent : classes.summaryContentHidden }} className={classes.expansionSummary} onClick={() => this.togglePanel("panel7", this.state.expanded)} expandIcon={<ExpandMoreIcon classes={{ root: this.state.expanded === "" || this.state.expanded === "panel7" ? null : classes.iconHidden }} className={classes.expandIcons} color="secondary" />}>
+                                                <ExpansionPanelSummary classes={{ content: this.state.expanded === "" || this.state.expanded === "panel7" ? classes.summaryContent : classes.summaryContentHidden }} className={classes.expansionSummary} onClick={() => this.togglePanel("panel7", this.state.expanded)} expandIcon={<ExpandMoreIcon classes={{ root: this.state.expanded === "" || this.state.expanded === "panel7" ? classes.iconInitial : classes.iconHidden }} className={classes.expandIcons} color="secondary" />}>
                                                     <Typography className={this.state.expanded === "" || this.state.expanded === "panel7" ? classes.heading : classes.headingHidden}>Code of Ethos</Typography>
                                                 </ExpansionPanelSummary>
                                                 <ExpansionPanelDetails classes={{root: classes.panelDetailsContainer}}>
@@ -329,7 +346,7 @@ class Page1 extends React.Component {
                                                 </ExpansionPanelDetails>
                                             </ExpansionPanel>
                                             <ExpansionPanel expanded={this.state.expanded === 'panel8'} className={classes.paperStyle}>
-                                                <ExpansionPanelSummary classes={{ content: this.state.expanded === "" || this.state.expanded === "panel8" ? classes.summaryContent : classes.summaryContentHidden }} className={classes.expansionSummary} onClick={() => this.togglePanel("panel8", this.state.expanded)} expandIcon={<ExpandMoreIcon classes={{ root: this.state.expanded === "" || this.state.expanded === "panel8" ? null : classes.iconHidden }} className={classes.expandIcons} color="secondary" />}>
+                                                <ExpansionPanelSummary classes={{ content: this.state.expanded === "" || this.state.expanded === "panel8" ? classes.summaryContent : classes.summaryContentHidden }} className={classes.expansionSummary} onClick={() => this.togglePanel("panel8", this.state.expanded)} expandIcon={<ExpandMoreIcon classes={{ root: this.state.expanded === "" || this.state.expanded === "panel8" ? classes.iconInitial : classes.iconHidden }} className={classes.expandIcons} color="secondary" />}>
                                                     <Typography className={this.state.expanded === "" || this.state.expanded === "panel8" ? classes.heading : classes.headingHidden}>About this Page</Typography>
                                                 </ExpansionPanelSummary>
                                                 <ExpansionPanelDetails classes={{root: classes.panelDetailsContainer}}>
@@ -344,10 +361,10 @@ class Page1 extends React.Component {
                             </Grid>
                         </Grid>
                     </div>
-                    <Particles
+                    {/* <Particles
                         className={classes.particleDiv}
                         params={PartParams}
-                    />
+                    /> */}
                 </div>
             </ScrollableAnchor>
         )

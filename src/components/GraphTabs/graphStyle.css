@@ -9,3 +9,43 @@ svg.ct-chart-bar, svg.ct-chart-line{
   transform: translate(-100%) rotate(-45deg);
   white-space:nowrap;
 }
+
+.ct-series-a .ct-point{
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 2s linear alternate infinite;
+  stroke: #d81b1b
+}
+.ct-series-a .ct-line{
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 2s linear alternate infinite;
+  stroke: transparent
+}
+
+.ct-series-a .ct-area{
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 3s linear alternate infinite;
+  stroke: #d81b1b;
+  animation-fill-mode: forwards;
+  fill: #d81b1b
+}
+
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.ct-series-a .ct-bar{
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 2s 500ms cubic-bezier(0.74, 0.02, 1, 0.05) infinite alternate;
+  /* animation-duration: 2s; */
+  stroke: #d81b1b;
+}

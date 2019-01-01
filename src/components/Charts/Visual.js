@@ -10,13 +10,13 @@ var visualChart = {
     },
     options: {
         low: 0,
-        high: 10
+        high: 10,
     },
     animation: {
         // Let's put a sequence number aside so we can use it in the event callbacks
         seq: 0,
         delays: 80,
-        durations: 500,
+        durations: 200,
         // Once the chart is fully created we reset the sequence
         created: function () {
             visualChart.animation.seq = 0;

@@ -16,7 +16,7 @@ var sqlChart = {
         // Let's put a sequence number aside so we can use it in the event callbacks
         seq: 0,
         delays: 80,
-        durations: 500,
+        durations: 200,
         // Once the chart is fully created we reset the sequence
         created: function () {
             sqlChart.animation.seq = 0;
@@ -162,13 +162,14 @@ var noSQLChart = {
     },
     options: {
         low: 0,
-        high: 10
+        high: 10,
+        showArea: true
     },
     animation: {
         // Let's put a sequence number aside so we can use it in the event callbacks
         seq: 0,
         delays: 80,
-        durations: 500,
+        durations: 200,
         // Once the chart is fully created we reset the sequence
         created: function () {
             noSQLChart.animation.seq = 0;
@@ -320,7 +321,7 @@ var unstructuredChart = {
         // Let's put a sequence number aside so we can use it in the event callbacks
         seq: 0,
         delays: 80,
-        durations: 500,
+        durations: 200,
         // Once the chart is fully created we reset the sequence
         created: function () {
             unstructuredChart.animation.seq = 0;
