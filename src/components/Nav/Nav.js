@@ -105,14 +105,14 @@ const styles = theme => ({
     drawerOpen: {
         backgroundColor: "#1a1a1ae8",
         width: drawerWidth,
-        transition: theme.transitions.create('width', {
+        transition: theme.transitions.create(['width', 'backgroundColor'], {
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.enteringScreen,
         }),
     },
     drawerClose: {
         backgroundColor: "#1a1a1a9c",
-        transition: theme.transitions.create('width', {
+        transition: theme.transitions.create(['width', 'backgroundColor'], {
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.leavingScreen,
         }),
@@ -136,14 +136,14 @@ const styles = theme => ({
     drawer2Open: {
         backgroundColor: "#1a1a1ae8",
         width: drawerWidth,
-        transition: theme.transitions.create('width', {
+        transition: theme.transitions.create(['width', 'backgroundColor'], {
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.enteringScreen,
         }),
     },
     drawer2Close: {
         backgroundColor: "#1a1a1a9c",
-        transition: theme.transitions.create('width', {
+        transition: theme.transitions.create(['width', 'backgroundColor'], {
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.leavingScreen,
         }),

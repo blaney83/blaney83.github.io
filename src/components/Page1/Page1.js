@@ -135,10 +135,18 @@ const styles = theme => ({
     },
     heading: {
         color: "white",
+        transition: theme.transitions.create(['color', 'fontSize'], {
+            easing: theme.transitions.easing.sharp,
+            duration: theme.transitions.duration.leavingScreen,
+        }),
     },
     headingHidden: {
         color: "white",
-        fontSize: "0px"
+        fontSize: "0px",
+        transition: theme.transitions.create(['color', 'fontSize'], {
+            easing: theme.transitions.easing.sharp,
+            duration: theme.transitions.duration.leavingScreen,
+        }),
     },
     secondaryHeading: {
         color: "white"
@@ -177,7 +185,11 @@ const styles = theme => ({
     },
     summaryContentHidden: {
         height: " 0px",
-        margin: " 0px"
+        margin: " 0px",
+        transition: theme.transitions.create(['height', 'margin'], {
+            easing: theme.transitions.easing.sharp,
+            duration: theme.transitions.duration.leavingScreen,
+        }),
     },
     iconHidden: {
         height: "0px"
