@@ -10,6 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import List from '@material-ui/core/List';
 import Hidden from '@material-ui/core/Hidden';
 import GitHubIcon from '../../assets/icons/GitHub.svg';
+import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import LinkedIcon from '../../assets/icons/linked.svg';
 import { connect } from "react-redux";
 import IconButton from '@material-ui/core/IconButton';
@@ -451,166 +452,169 @@ class Sidebar extends React.Component {
                     </Toolbar>
                 </AppBar>
                 <Hidden xsDown={this.state.mediaQ} implementation="css">
-                    <Drawer
-                        variant="permanent"
-                        className={classNames(classes.drawer, {
-                            [classes.drawerOpen]: this.state.open,
-                            [classes.drawerClose]: !this.state.open,
-                        })}
-                        classes={{
-                            paper: classNames("sidebarClass", classes.seeThruPaper, classes.sBDrawerPaper, {
+                    <ClickAwayListener onClickAway={this.handleDrawerClose}>
+                        <Drawer
+                            variant="permanent"
+                            className={classNames(classes.drawer, {
                                 [classes.drawerOpen]: this.state.open,
                                 [classes.drawerClose]: !this.state.open,
-                            }),
-                        }}
-                        open={this.state.open}
-                    >
-                        <div className={classes.toolbar}>
-                            <IconButton onClick={this.handleDrawerClose}>
-                                {/* {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />} */}
-                                {this.state.open ? <ChevronLeftIcon className={classes.sideTbCloseIcon} /> : ""}
-                            </IconButton>
-                        </div>
-                        {/* <Divider /> */}
-                        <List>
-                            {/* <ListItem button={true}
+                            })}
+                            classes={{
+                                paper: classNames("sidebarClass", classes.seeThruPaper, classes.sBDrawerPaper, {
+                                    [classes.drawerOpen]: this.state.open,
+                                    [classes.drawerClose]: !this.state.open,
+                                }),
+                            }}
+                            open={this.state.open}
+                        >
+                            <div className={classes.toolbar}>
+                                <IconButton onClick={this.handleDrawerClose}>
+                                    {/* {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />} */}
+                                    {this.state.open ? <ChevronLeftIcon className={classes.sideTbCloseIcon} /> : ""}
+                                </IconButton>
+                            </div>
+                            {/* <Divider /> */}
+                            <List>
+                                {/* <ListItem button={true}
                                 key={"IpAddress"}
                                 className={classes.sideListItems}>
                                 <ListItemIcon>
                                     <ListItemText primary={"y: " + this.state.yScrollPosition} primaryTypographyProps={{ className: classes.sideIconsScroll }} />
                                 </ListItemIcon> */}
-                            {/* <ListItemText primary="Current Page Location" primaryTypographyProps={{ className: classes.sideIconLabels }}  /> */}
-                            {/* </ListItem> */}
-                            <ListItem button={true}
-                                key={"Home"}
-                                onClick={() => goToAnchor("home", true)}
-                                selected={this.state.currentPage === "#home"}
-                                className={this.state.currentPage === "#home" ? classes.selectedListItems : classes.sideListItems}
-                            >
-                                <ListItemIcon>
-                                    <HomeIcon className={classes.sideIcons} />
-                                </ListItemIcon>
-                                <ListItemText primary="Home" primaryTypographyProps={{ className: classes.sideIconLabels }} secondaryTypographyProps={{ className: classes.sideIconSubLabels }} />
-                            </ListItem>
-                            <ListItem button={true}
-                                key={"About Me"}
-                                onClick={() => goToAnchor("about_me", true)}
-                                selected={this.state.currentPage === "#about_me"}
-                                className={this.state.currentPage === "#about_me" ? classes.selectedListItems : classes.sideListItems}
-                            >
-                                <ListItemIcon>
-                                    <InfoIcon className={classes.sideIcons} />
-                                </ListItemIcon>
-                                <ListItemText primary="About Me" primaryTypographyProps={{ className: classes.sideIconLabels }} secondaryTypographyProps={{ className: classes.sideIconSubLabels }} />
-                            </ListItem>
-                            <ListItem button className={this.state.currentPage === "#practical_knowledge" ? classes.selectedListItems : classes.sideListItems} key={"Practical Knowledge"}
-                                onClick={() => goToAnchor("practical_knowledge", true)}
-                                selected={this.state.currentPage === "#practical_knowledge"}
-                            >
-                                <ListItemIcon>
-                                    <CodeIcon className={classes.sideIcons} />
-                                </ListItemIcon>
-                                <ListItemText primary="Practical Knowledge" primaryTypographyProps={{ className: classes.sideIconLabels }} secondaryTypographyProps={{ className: classes.sideIconSubLabels }} />
-                            </ListItem>
-                            <ListItem button className={this.state.currentPage === "#projects" ? classes.selectedListItems : classes.sideListItems}
-                                key={"Project Anthology"}
-                                onClick={() => goToAnchor("projects", true)}
-                                selected={this.state.currentPage === "#projects"}
-                            >
-                                <ListItemIcon>
-                                    <HistoryIcon className={classes.sideIcons} />
-                                </ListItemIcon>
-                                <ListItemText primary="Project Anthology" primaryTypographyProps={{ className: classes.sideIconLabels }} secondaryTypographyProps={{ className: classes.sideIconSubLabels }} />
-                            </ListItem>
-                            <ListItem button className={this.state.currentPage === "#resources" ? classes.selectedListItems : classes.sideListItems} key={"Resources"}
-                                onClick={() => goToAnchor("resources", true)}
-                                selected={this.state.currentPage === "#resources"}
-                            >
-                                <ListItemIcon>
-                                    <ResourceIcon className={classes.sideIcons} />
-                                </ListItemIcon>
-                                <ListItemText primary="Resources" primaryTypographyProps={{ className: classes.sideIconLabels }} secondaryTypographyProps={{ className: classes.sideIconSubLabels }} />
-                            </ListItem>
-                            <ListItem button key={"Contact"} className={this.state.currentPage === "#contact" ? classes.selectedListItems : classes.sideListItems} onClick={() => goToAnchor("contact", true)}
-                                selected={this.state.currentPage === "#contact"}
-                            >
-                                <ListItemIcon>
-                                    <ContactIcon className={classes.sideIcons} />
-                                </ListItemIcon>
-                                <ListItemText primary="Contact" primaryTypographyProps={{ className: classes.sideIconLabels }} secondaryTypographyProps={{ className: classes.sideIconSubLabels }} />
-                            </ListItem>
-                        </List>
-                        <List className={classes.signOutStayDown}>
-                            <a className={classes.sideIconLabels} href="https://github.com/blaney83" rel="noopener noreferrer" target="_blank">
-                                <ListItem
-                                    button={true}
-                                    className={classes.sideListItems}
+                                {/* <ListItemText primary="Current Page Location" primaryTypographyProps={{ className: classes.sideIconLabels }}  /> */}
+                                {/* </ListItem> */}
+                                <ListItem button={true}
+                                    key={"Home"}
+                                    onClick={() => goToAnchor("home", true)}
+                                    selected={this.state.currentPage === "#home"}
+                                    className={this.state.currentPage === "#home" ? classes.selectedListItems : classes.sideListItems}
                                 >
-                                    <ListItemIcon
-                                        className={classes.customIcons}
-                                    >
-                                        <Avatar src={GitHubIcon}
-                                            className={classes.customAvatars}
-                                        />
+                                    <ListItemIcon>
+                                        <HomeIcon className={classes.sideIcons} />
                                     </ListItemIcon>
-                                    <ListItemText
-                                        primary="GitHub"
-                                        primaryTypographyProps={{ className: classes.sideIconLabels }} secondaryTypographyProps={{ className: classes.sideIconSubLabels }} />
+                                    <ListItemText primary="Home" primaryTypographyProps={{ className: classes.sideIconLabels }} secondaryTypographyProps={{ className: classes.sideIconSubLabels }} />
                                 </ListItem>
-                            </a>
-                            <a className={classes.sideIconLabels} href="https://www.linkedin.com/in/ben-laney-090613117/" rel="noopener noreferrer" target="_blank">
-                                <ListItem
-                                    button={true}
-                                    className={classes.sideListItems}
+                                <ListItem button={true}
+                                    key={"About Me"}
+                                    onClick={() => goToAnchor("about_me", true)}
+                                    selected={this.state.currentPage === "#about_me"}
+                                    className={this.state.currentPage === "#about_me" ? classes.selectedListItems : classes.sideListItems}
                                 >
-                                    <ListItemIcon
-                                        className={classes.customIcons}
-                                    >
-                                        <Avatar src={LinkedIcon}
-                                            className={classes.customAvatars}
-                                        />
+                                    <ListItemIcon>
+                                        <InfoIcon className={classes.sideIcons} />
                                     </ListItemIcon>
-                                    <ListItemText
-                                        primary="LinkedIn"
-                                        primaryTypographyProps={{ className: classes.sideIconLabels }} secondaryTypographyProps={{ className: classes.sideIconSubLabels }} />
+                                    <ListItemText primary="About Me" primaryTypographyProps={{ className: classes.sideIconLabels }} secondaryTypographyProps={{ className: classes.sideIconSubLabels }} />
                                 </ListItem>
-                            </a>
-                        </List>
-                    </Drawer>
+                                <ListItem button className={this.state.currentPage === "#practical_knowledge" ? classes.selectedListItems : classes.sideListItems} key={"Practical Knowledge"}
+                                    onClick={() => goToAnchor("practical_knowledge", true)}
+                                    selected={this.state.currentPage === "#practical_knowledge"}
+                                >
+                                    <ListItemIcon>
+                                        <CodeIcon className={classes.sideIcons} />
+                                    </ListItemIcon>
+                                    <ListItemText primary="Practical Knowledge" primaryTypographyProps={{ className: classes.sideIconLabels }} secondaryTypographyProps={{ className: classes.sideIconSubLabels }} />
+                                </ListItem>
+                                <ListItem button className={this.state.currentPage === "#projects" ? classes.selectedListItems : classes.sideListItems}
+                                    key={"Project Anthology"}
+                                    onClick={() => goToAnchor("projects", true)}
+                                    selected={this.state.currentPage === "#projects"}
+                                >
+                                    <ListItemIcon>
+                                        <HistoryIcon className={classes.sideIcons} />
+                                    </ListItemIcon>
+                                    <ListItemText primary="Project Anthology" primaryTypographyProps={{ className: classes.sideIconLabels }} secondaryTypographyProps={{ className: classes.sideIconSubLabels }} />
+                                </ListItem>
+                                <ListItem button className={this.state.currentPage === "#resources" ? classes.selectedListItems : classes.sideListItems} key={"Resources"}
+                                    onClick={() => goToAnchor("resources", true)}
+                                    selected={this.state.currentPage === "#resources"}
+                                >
+                                    <ListItemIcon>
+                                        <ResourceIcon className={classes.sideIcons} />
+                                    </ListItemIcon>
+                                    <ListItemText primary="Resources" primaryTypographyProps={{ className: classes.sideIconLabels }} secondaryTypographyProps={{ className: classes.sideIconSubLabels }} />
+                                </ListItem>
+                                <ListItem button key={"Contact"} className={this.state.currentPage === "#contact" ? classes.selectedListItems : classes.sideListItems} onClick={() => goToAnchor("contact", true)}
+                                    selected={this.state.currentPage === "#contact"}
+                                >
+                                    <ListItemIcon>
+                                        <ContactIcon className={classes.sideIcons} />
+                                    </ListItemIcon>
+                                    <ListItemText primary="Contact" primaryTypographyProps={{ className: classes.sideIconLabels }} secondaryTypographyProps={{ className: classes.sideIconSubLabels }} />
+                                </ListItem>
+                            </List>
+                            <List className={classes.signOutStayDown}>
+                                <a className={classes.sideIconLabels} href="https://github.com/blaney83" rel="noopener noreferrer" target="_blank">
+                                    <ListItem
+                                        button={true}
+                                        className={classes.sideListItems}
+                                    >
+                                        <ListItemIcon
+                                            className={classes.customIcons}
+                                        >
+                                            <Avatar src={GitHubIcon}
+                                                className={classes.customAvatars}
+                                            />
+                                        </ListItemIcon>
+                                        <ListItemText
+                                            primary="GitHub"
+                                            primaryTypographyProps={{ className: classes.sideIconLabels }} secondaryTypographyProps={{ className: classes.sideIconSubLabels }} />
+                                    </ListItem>
+                                </a>
+                                <a className={classes.sideIconLabels} href="https://www.linkedin.com/in/ben-laney-090613117/" rel="noopener noreferrer" target="_blank">
+                                    <ListItem
+                                        button={true}
+                                        className={classes.sideListItems}
+                                    >
+                                        <ListItemIcon
+                                            className={classes.customIcons}
+                                        >
+                                            <Avatar src={LinkedIcon}
+                                                className={classes.customAvatars}
+                                            />
+                                        </ListItemIcon>
+                                        <ListItemText
+                                            primary="LinkedIn"
+                                            primaryTypographyProps={{ className: classes.sideIconLabels }} secondaryTypographyProps={{ className: classes.sideIconSubLabels }} />
+                                    </ListItem>
+                                </a>
+                            </List>
+                        </Drawer>
+                    </ClickAwayListener>
                 </Hidden>
                 <Hidden xsDown={this.state.mediaQ2} implementation="css">
-                    <Drawer
-                        variant="permanent"
-                        anchor="right"
-                        className={classNames(classes.drawer2, {
-                            [classes.drawer2Open]: this.state.open2,
-                            [classes.drawer2Close]: !this.state.open2,
-                        })}
-                        classes={{
-                            paper: classNames("sidebarClass", classes.seeThruPaper, classes.sBDrawerPaper, {
+                    <ClickAwayListener onClickAway={this.handleDrawer2Close}>
+                        <Drawer
+                            variant="permanent"
+                            anchor="right"
+                            className={classNames(classes.drawer2, {
                                 [classes.drawer2Open]: this.state.open2,
                                 [classes.drawer2Close]: !this.state.open2,
-                            }),
-                        }}
-                        open={this.state.open2}
-                    >
-                        <div className={classes.toolbar2}>
-                            <IconButton onClick={this.handleDrawer2Close}>
-                                {/* {theme.direction === 'ltr' ?  <ChevronRightIcon /> : <ChevronLeftIcon /> } */}
-                                {this.state.open2 ? <ChevronRightIcon className={classes.sideTbCloseIcon2} /> : ""}
-                            </IconButton>
-                        </div>
-                        {/* <Divider /> */}
-                        <List>
-                            <ListItem button={true}
-                                key={"header"}
-                                className={classes.infoListHeader}>
-                                <ListItemIcon>
-                                    <StatsIcon className={classes.sideIconsHide} />
-                                </ListItemIcon>
-                                <ListItemText primary="Know your Data" secondary="Protect your Data" primaryTypographyProps={{ className: classes.infoSidePrimaryHeader }} secondaryTypographyProps={{ className: classes.infoSideSecondaryHeader }} />
-                            </ListItem>
-                            {/* <ListItem button={true}
+                            })}
+                            classes={{
+                                paper: classNames("sidebarClass", classes.seeThruPaper, classes.sBDrawerPaper, {
+                                    [classes.drawer2Open]: this.state.open2,
+                                    [classes.drawer2Close]: !this.state.open2,
+                                }),
+                            }}
+                            open={this.state.open2}
+                        >
+                            <div className={classes.toolbar2}>
+                                <IconButton onClick={this.handleDrawer2Close}>
+                                    {/* {theme.direction === 'ltr' ?  <ChevronRightIcon /> : <ChevronLeftIcon /> } */}
+                                    {this.state.open2 ? <ChevronRightIcon className={classes.sideTbCloseIcon2} /> : ""}
+                                </IconButton>
+                            </div>
+                            {/* <Divider /> */}
+                            <List>
+                                <ListItem button={true}
+                                    key={"header"}
+                                    className={classes.infoListHeader}>
+                                    <ListItemIcon>
+                                        <StatsIcon className={classes.sideIconsHide} />
+                                    </ListItemIcon>
+                                    <ListItemText primary="Know your Data" secondary="Protect your Data" primaryTypographyProps={{ className: classes.infoSidePrimaryHeader }} secondaryTypographyProps={{ className: classes.infoSideSecondaryHeader }} />
+                                </ListItem>
+                                {/* <ListItem button={true}
                                 key={"IpAddress"}
                                 className={classes.infoListItems}>
                                 <ListItemIcon>
@@ -618,177 +622,178 @@ class Sidebar extends React.Component {
                                 </ListItemIcon>
                                 <ListItemText primary="Device Info" primaryTypographyProps={{ className: classes.infoSideIconLabels }} secondaryTypographyProps={{ className: classes.infoSideIconSubLabels }} />
                             </ListItem> */}
-                            <ListItem button={true}
-                                key={"networkType"}
-                                className={classes.infoListItems}>
-                                <ListItemIcon>
-                                    <DeviceIcon className={classes.sideIcons} />
-                                </ListItemIcon>
-                                <ListItemText primary={this.state.networkType} secondary="NetworkType" primaryTypographyProps={{ className: classes.infoSideIconLabels }} secondaryTypographyProps={{ className: classes.infoSideIconSubLabels }} />
-                            </ListItem>
-                            <ListItem button={true}
-                                key={"downSpeed"}
-                                className={classes.infoListItems}>
-                                <ListItemIcon>
-                                    <HomeIcon className={classes.sideIconsHide} />
-                                </ListItemIcon>
-                                <ListItemText primary={this.state.networkGHZ} secondary="Downlink Speed" primaryTypographyProps={{ className: classes.infoSideIconLabels }} secondaryTypographyProps={{ className: classes.infoSideIconSubLabels }} />
-                            </ListItem>
-                            <ListItem button={true}
-                                key={"browserOrigin"}
-                                className={classes.infoListItems}>
-                                <ListItemIcon>
-                                    <HomeIcon className={classes.sideIconsHide} />
-                                </ListItemIcon>
-                                <ListItemText primary={this.state.browserType} secondary="Browser Origin" primaryTypographyProps={{ className: classes.infoSideIconLabels }} secondaryTypographyProps={{ className: classes.infoSideIconSubLabels }} />
-                            </ListItem>
-                            <ListItem button={true}
-                                key={"os"}
-                                className={classes.infoListItems}>
-                                <ListItemIcon>
-                                    <HomeIcon className={classes.sideIconsHide} />
-                                </ListItemIcon>
-                                <ListItemText primary={this.state.systemType} secondary="OS" primaryTypographyProps={{ className: classes.infoSideIconLabels }} secondaryTypographyProps={{ className: classes.infoSideIconSubLabels }} />
-                            </ListItem>
-                            <ListItem button={true}
-                                key={"screenSize"}
-                                className={classes.infoListItems}>
-                                <ListItemIcon>
-                                    <HomeIcon className={classes.sideIconsHide} />
-                                </ListItemIcon>
-                                <ListItemText primary={this.state.screenSize[0] + " x " + this.state.screenSize[1]} secondary="Screen Size" primaryTypographyProps={{ className: classes.infoSideIconLabels }} secondaryTypographyProps={{ className: classes.infoSideIconSubLabels }} />
-                            </ListItem>
-                            <ListItem button={true}
-                                key={"orientation"}
-                                className={classes.infoListItems}>
-                                <ListItemIcon>
-                                    <HomeIcon className={classes.sideIconsHide} />
-                                </ListItemIcon>
-                                <ListItemText primary={this.state.screenOrientationType} secondary="Orientation" primaryTypographyProps={{ className: classes.infoSideIconLabels }} secondaryTypographyProps={{ className: classes.infoSideIconSubLabels }} />
-                            </ListItem>
-                            <ListItem button={true}
-                                key={"orientation2"}
-                                className={classes.infoListItems}>
-                                <ListItemIcon>
-                                    <HomeIcon className={classes.sideIconsHide} />
-                                </ListItemIcon>
-                                <ListItemText primary={this.state.screenOrientationType} secondary="Orientation" primaryTypographyProps={{ className: classes.infoSideIconLabels }} secondaryTypographyProps={{ className: classes.infoSideIconSubLabels }} />
-                            </ListItem>
-                            <ListItem button={true}
-                                key={"deviceAngle"}
-                                className={classes.infoListItems}>
-                                <ListItemIcon>
-                                    <HomeIcon className={classes.sideIconsHide} />
-                                </ListItemIcon>
-                                <ListItemText primary={this.state.screenOrientationAngle + " degrees"} secondary="Device Angle" primaryTypographyProps={{ className: classes.infoSideIconLabels }} secondaryTypographyProps={{ className: classes.infoSideIconSubLabels }} />
-                            </ListItem>
-                            <ListItem button={true}
-                                key={"zoomSettings"}
-                                className={classes.infoListItems}>
-                                <ListItemIcon>
-                                    <HomeIcon className={classes.sideIconsHide} />
-                                </ListItemIcon>
-                                <ListItemText primary={this.state.screenZoom + "x"} secondary="Current Zoom" primaryTypographyProps={{ className: classes.infoSideIconLabels }} secondaryTypographyProps={{ className: classes.infoSideIconSubLabels }} />
-                            </ListItem>
-                            <ListItem button={true}
-                                key={"IpAddress"}
-                                className={classes.infoListItems}>
-                                <ListItemIcon>
-                                    <WorldIcon className={classes.sideIcons} />
-                                </ListItemIcon>
-                                <ListItemText primary={this.state.IPAddress} secondary="IP Address" primaryTypographyProps={{ className: classes.infoSideIconLabels }} secondaryTypographyProps={{ className: classes.infoSideIconSubLabels }} />
-                            </ListItem>
-                            <ListItem button={true}
-                                key={"userCity"}
-                                className={classes.infoListItems}>
-                                <ListItemIcon>
-                                    <HomeIcon className={classes.sideIconsHide} />
-                                </ListItemIcon>
-                                <ListItemText primary={this.state.userCity} secondary="City" primaryTypographyProps={{ className: classes.infoSideIconLabels }} secondaryTypographyProps={{ className: classes.infoSideIconSubLabels }} />
-                            </ListItem>
-                            <ListItem button={true}
-                                key={"userState"}
-                                className={classes.infoListItems}>
-                                <ListItemIcon>
-                                    <HomeIcon className={classes.sideIconsHide} />
-                                </ListItemIcon>
-                                <ListItemText primary={this.state.userState} secondary="State" primaryTypographyProps={{ className: classes.infoSideIconLabels }} secondaryTypographyProps={{ className: classes.infoSideIconSubLabels }} />
-                            </ListItem>
-                            <ListItem button={true}
-                                key={"userCountry"}
-                                className={classes.infoListItems}>
-                                <ListItemIcon>
-                                    <HomeIcon className={classes.sideIconsHide} />
-                                </ListItemIcon>
-                                <ListItemText primary={this.state.userCountry} secondary="Country" primaryTypographyProps={{ className: classes.infoSideIconLabels }} secondaryTypographyProps={{ className: classes.infoSideIconSubLabels }} />
-                            </ListItem>
-                            <ListItem button={true}
-                                key={"userLongitude"}
-                                className={classes.infoListItems}>
-                                <ListItemIcon>
-                                    <HomeIcon className={classes.sideIconsHide} />
-                                </ListItemIcon>
-                                <ListItemText primary={this.state.userLongitude} secondary="Longitude" primaryTypographyProps={{ className: classes.infoSideIconLabels }} secondaryTypographyProps={{ className: classes.infoSideIconSubLabels }} />
-                            </ListItem>
-                            <ListItem button={true}
-                                key={"userLatitude"}
-                                className={classes.infoListItems}>
-                                <ListItemIcon>
-                                    <HomeIcon className={classes.sideIconsHide} />
-                                </ListItemIcon>
-                                <ListItemText primary={this.state.userLatitude} secondary="Latitude" primaryTypographyProps={{ className: classes.infoSideIconLabels }} secondaryTypographyProps={{ className: classes.infoSideIconSubLabels }} />
-                            </ListItem>
-                            <ListItem button={true}
-                                key={"internetProvider"}
-                                className={classes.infoListItems}>
-                                <ListItemIcon>
-                                    <HomeIcon className={classes.sideIconsHide} />
-                                </ListItemIcon>
-                                <ListItemText primary={this.state.userInternetServiceProvider} secondary="Internet Provider" primaryTypographyProps={{ className: classes.infoSideIconLabels }} secondaryTypographyProps={{ className: classes.infoSideIconSubLabels }} />
-                            </ListItem>
-                            <ListItem button key={"proxy"}
-                                className={classes.infoListItems}
-                            >
-                                <ListItemIcon>
-                                    <SearchIcon className={classes.sideIconsHide} />
-                                </ListItemIcon>
-                                <ListItemText primary={this.state.userProxyBool} secondary="Proxy" primaryTypographyProps={{ className: classes.infoSideIconLabels }} secondaryTypographyProps={{ className: classes.infoSideIconSubLabels }} />
-                            </ListItem>
-                            <ListItem button key={"anonymous"}
-                                className={classes.infoListItems}
-                            >
-                                <ListItemIcon>
-                                    <SavedIcon className={classes.sideIconsHide} />
-                                </ListItemIcon>
-                                <ListItemText primary={this.state.userAnonymousBool} secondary="Anonymous" primaryTypographyProps={{ className: classes.infoSideIconLabels }} secondaryTypographyProps={{ className: classes.infoSideIconSubLabels }} />
-                            </ListItem>
-                            <ListItem button key={"userTime"}
-                                className={classes.infoListItems}
-                            >
-                                <ListItemIcon>
-                                    <AccountIcon className={classes.sideIconsHide} />
-                                </ListItemIcon>
-                                <ListItemText primary={this.state.userCurrentTime} secondary="Your Time" primaryTypographyProps={{ className: classes.infoSideIconLabels }} secondaryTypographyProps={{ className: classes.infoSideIconSubLabels }} />
-                            </ListItem>
-                            <ListItem button key={"userTime"}
-                                className={classes.infoListItems}
-                            >
-                                <ListItemIcon>
-                                    <ListItemText primary={"y: " + this.state.yScrollPosition} primaryTypographyProps={{ className: classes.sideIconsScroll }} />
-                                </ListItemIcon>
-                                {/* <ListItemText primary={this.state.userCurrentTime} secondary="Your Time" primaryTypographyProps={{ className: classes.infoSideIconLabels }} secondaryTypographyProps={{ className: classes.infoSideIconSubLabels }} /> */}
-                            </ListItem>
-                        </List>
-                        <List className={classes.signOutStayDown}>
-                            <ListItem button={true}
-                            >
-                                <ListItemIcon>
-                                    <ShareIcon className={classes.sideIcons} />
-                                </ListItemIcon>
-                                <ListItemText primary="Share" primaryTypographyProps={{ className: classes.sideIconLabels }} />
-                            </ListItem>
-                        </List>
-                    </Drawer>
+                                <ListItem button={true}
+                                    key={"networkType"}
+                                    className={classes.infoListItems}>
+                                    <ListItemIcon>
+                                        <DeviceIcon className={classes.sideIcons} />
+                                    </ListItemIcon>
+                                    <ListItemText primary={this.state.networkType} secondary="NetworkType" primaryTypographyProps={{ className: classes.infoSideIconLabels }} secondaryTypographyProps={{ className: classes.infoSideIconSubLabels }} />
+                                </ListItem>
+                                <ListItem button={true}
+                                    key={"downSpeed"}
+                                    className={classes.infoListItems}>
+                                    <ListItemIcon>
+                                        <HomeIcon className={classes.sideIconsHide} />
+                                    </ListItemIcon>
+                                    <ListItemText primary={this.state.networkGHZ} secondary="Downlink Speed" primaryTypographyProps={{ className: classes.infoSideIconLabels }} secondaryTypographyProps={{ className: classes.infoSideIconSubLabels }} />
+                                </ListItem>
+                                <ListItem button={true}
+                                    key={"browserOrigin"}
+                                    className={classes.infoListItems}>
+                                    <ListItemIcon>
+                                        <HomeIcon className={classes.sideIconsHide} />
+                                    </ListItemIcon>
+                                    <ListItemText primary={this.state.browserType} secondary="Browser Origin" primaryTypographyProps={{ className: classes.infoSideIconLabels }} secondaryTypographyProps={{ className: classes.infoSideIconSubLabels }} />
+                                </ListItem>
+                                <ListItem button={true}
+                                    key={"os"}
+                                    className={classes.infoListItems}>
+                                    <ListItemIcon>
+                                        <HomeIcon className={classes.sideIconsHide} />
+                                    </ListItemIcon>
+                                    <ListItemText primary={this.state.systemType} secondary="OS" primaryTypographyProps={{ className: classes.infoSideIconLabels }} secondaryTypographyProps={{ className: classes.infoSideIconSubLabels }} />
+                                </ListItem>
+                                <ListItem button={true}
+                                    key={"screenSize"}
+                                    className={classes.infoListItems}>
+                                    <ListItemIcon>
+                                        <HomeIcon className={classes.sideIconsHide} />
+                                    </ListItemIcon>
+                                    <ListItemText primary={this.state.screenSize[0] + " x " + this.state.screenSize[1]} secondary="Screen Size" primaryTypographyProps={{ className: classes.infoSideIconLabels }} secondaryTypographyProps={{ className: classes.infoSideIconSubLabels }} />
+                                </ListItem>
+                                <ListItem button={true}
+                                    key={"orientation"}
+                                    className={classes.infoListItems}>
+                                    <ListItemIcon>
+                                        <HomeIcon className={classes.sideIconsHide} />
+                                    </ListItemIcon>
+                                    <ListItemText primary={this.state.screenOrientationType} secondary="Orientation" primaryTypographyProps={{ className: classes.infoSideIconLabels }} secondaryTypographyProps={{ className: classes.infoSideIconSubLabels }} />
+                                </ListItem>
+                                <ListItem button={true}
+                                    key={"orientation2"}
+                                    className={classes.infoListItems}>
+                                    <ListItemIcon>
+                                        <HomeIcon className={classes.sideIconsHide} />
+                                    </ListItemIcon>
+                                    <ListItemText primary={this.state.screenOrientationType} secondary="Orientation" primaryTypographyProps={{ className: classes.infoSideIconLabels }} secondaryTypographyProps={{ className: classes.infoSideIconSubLabels }} />
+                                </ListItem>
+                                <ListItem button={true}
+                                    key={"deviceAngle"}
+                                    className={classes.infoListItems}>
+                                    <ListItemIcon>
+                                        <HomeIcon className={classes.sideIconsHide} />
+                                    </ListItemIcon>
+                                    <ListItemText primary={this.state.screenOrientationAngle + " degrees"} secondary="Device Angle" primaryTypographyProps={{ className: classes.infoSideIconLabels }} secondaryTypographyProps={{ className: classes.infoSideIconSubLabels }} />
+                                </ListItem>
+                                <ListItem button={true}
+                                    key={"zoomSettings"}
+                                    className={classes.infoListItems}>
+                                    <ListItemIcon>
+                                        <HomeIcon className={classes.sideIconsHide} />
+                                    </ListItemIcon>
+                                    <ListItemText primary={this.state.screenZoom + "x"} secondary="Current Zoom" primaryTypographyProps={{ className: classes.infoSideIconLabels }} secondaryTypographyProps={{ className: classes.infoSideIconSubLabels }} />
+                                </ListItem>
+                                <ListItem button={true}
+                                    key={"IpAddress"}
+                                    className={classes.infoListItems}>
+                                    <ListItemIcon>
+                                        <WorldIcon className={classes.sideIcons} />
+                                    </ListItemIcon>
+                                    <ListItemText primary={this.state.IPAddress} secondary="IP Address" primaryTypographyProps={{ className: classes.infoSideIconLabels }} secondaryTypographyProps={{ className: classes.infoSideIconSubLabels }} />
+                                </ListItem>
+                                <ListItem button={true}
+                                    key={"userCity"}
+                                    className={classes.infoListItems}>
+                                    <ListItemIcon>
+                                        <HomeIcon className={classes.sideIconsHide} />
+                                    </ListItemIcon>
+                                    <ListItemText primary={this.state.userCity} secondary="City" primaryTypographyProps={{ className: classes.infoSideIconLabels }} secondaryTypographyProps={{ className: classes.infoSideIconSubLabels }} />
+                                </ListItem>
+                                <ListItem button={true}
+                                    key={"userState"}
+                                    className={classes.infoListItems}>
+                                    <ListItemIcon>
+                                        <HomeIcon className={classes.sideIconsHide} />
+                                    </ListItemIcon>
+                                    <ListItemText primary={this.state.userState} secondary="State" primaryTypographyProps={{ className: classes.infoSideIconLabels }} secondaryTypographyProps={{ className: classes.infoSideIconSubLabels }} />
+                                </ListItem>
+                                <ListItem button={true}
+                                    key={"userCountry"}
+                                    className={classes.infoListItems}>
+                                    <ListItemIcon>
+                                        <HomeIcon className={classes.sideIconsHide} />
+                                    </ListItemIcon>
+                                    <ListItemText primary={this.state.userCountry} secondary="Country" primaryTypographyProps={{ className: classes.infoSideIconLabels }} secondaryTypographyProps={{ className: classes.infoSideIconSubLabels }} />
+                                </ListItem>
+                                <ListItem button={true}
+                                    key={"userLongitude"}
+                                    className={classes.infoListItems}>
+                                    <ListItemIcon>
+                                        <HomeIcon className={classes.sideIconsHide} />
+                                    </ListItemIcon>
+                                    <ListItemText primary={this.state.userLongitude} secondary="Longitude" primaryTypographyProps={{ className: classes.infoSideIconLabels }} secondaryTypographyProps={{ className: classes.infoSideIconSubLabels }} />
+                                </ListItem>
+                                <ListItem button={true}
+                                    key={"userLatitude"}
+                                    className={classes.infoListItems}>
+                                    <ListItemIcon>
+                                        <HomeIcon className={classes.sideIconsHide} />
+                                    </ListItemIcon>
+                                    <ListItemText primary={this.state.userLatitude} secondary="Latitude" primaryTypographyProps={{ className: classes.infoSideIconLabels }} secondaryTypographyProps={{ className: classes.infoSideIconSubLabels }} />
+                                </ListItem>
+                                <ListItem button={true}
+                                    key={"internetProvider"}
+                                    className={classes.infoListItems}>
+                                    <ListItemIcon>
+                                        <HomeIcon className={classes.sideIconsHide} />
+                                    </ListItemIcon>
+                                    <ListItemText primary={this.state.userInternetServiceProvider} secondary="Internet Provider" primaryTypographyProps={{ className: classes.infoSideIconLabels }} secondaryTypographyProps={{ className: classes.infoSideIconSubLabels }} />
+                                </ListItem>
+                                <ListItem button key={"proxy"}
+                                    className={classes.infoListItems}
+                                >
+                                    <ListItemIcon>
+                                        <SearchIcon className={classes.sideIconsHide} />
+                                    </ListItemIcon>
+                                    <ListItemText primary={this.state.userProxyBool} secondary="Proxy" primaryTypographyProps={{ className: classes.infoSideIconLabels }} secondaryTypographyProps={{ className: classes.infoSideIconSubLabels }} />
+                                </ListItem>
+                                <ListItem button key={"anonymous"}
+                                    className={classes.infoListItems}
+                                >
+                                    <ListItemIcon>
+                                        <SavedIcon className={classes.sideIconsHide} />
+                                    </ListItemIcon>
+                                    <ListItemText primary={this.state.userAnonymousBool} secondary="Anonymous" primaryTypographyProps={{ className: classes.infoSideIconLabels }} secondaryTypographyProps={{ className: classes.infoSideIconSubLabels }} />
+                                </ListItem>
+                                <ListItem button key={"userTime"}
+                                    className={classes.infoListItems}
+                                >
+                                    <ListItemIcon>
+                                        <AccountIcon className={classes.sideIconsHide} />
+                                    </ListItemIcon>
+                                    <ListItemText primary={this.state.userCurrentTime} secondary="Your Time" primaryTypographyProps={{ className: classes.infoSideIconLabels }} secondaryTypographyProps={{ className: classes.infoSideIconSubLabels }} />
+                                </ListItem>
+                                <ListItem button key={"userTime"}
+                                    className={classes.infoListItems}
+                                >
+                                    <ListItemIcon>
+                                        <ListItemText primary={"y: " + this.state.yScrollPosition} primaryTypographyProps={{ className: classes.sideIconsScroll }} />
+                                    </ListItemIcon>
+                                    {/* <ListItemText primary={this.state.userCurrentTime} secondary="Your Time" primaryTypographyProps={{ className: classes.infoSideIconLabels }} secondaryTypographyProps={{ className: classes.infoSideIconSubLabels }} /> */}
+                                </ListItem>
+                            </List>
+                            <List className={classes.signOutStayDown}>
+                                <ListItem button={true}
+                                >
+                                    <ListItemIcon>
+                                        <ShareIcon className={classes.sideIcons} />
+                                    </ListItemIcon>
+                                    <ListItemText primary="Share" primaryTypographyProps={{ className: classes.sideIconLabels }} />
+                                </ListItem>
+                            </List>
+                        </Drawer>
+                    </ClickAwayListener>
                 </Hidden>
             </div >
         );
