@@ -452,7 +452,7 @@ class Sidebar extends React.Component {
                     </Toolbar>
                 </AppBar>
                 <Hidden xsDown={this.state.mediaQ} implementation="css">
-                    <ClickAwayListener onClickAway={this.handleDrawerClose}>
+                    {/* <ClickAwayListener onClickAway={this.handleDrawerClose}> */}
                         <Drawer
                             variant="permanent"
                             className={classNames(classes.drawer, {
@@ -473,16 +473,7 @@ class Sidebar extends React.Component {
                                     {this.state.open ? <ChevronLeftIcon className={classes.sideTbCloseIcon} /> : ""}
                                 </IconButton>
                             </div>
-                            {/* <Divider /> */}
                             <List>
-                                {/* <ListItem button={true}
-                                key={"IpAddress"}
-                                className={classes.sideListItems}>
-                                <ListItemIcon>
-                                    <ListItemText primary={"y: " + this.state.yScrollPosition} primaryTypographyProps={{ className: classes.sideIconsScroll }} />
-                                </ListItemIcon> */}
-                                {/* <ListItemText primary="Current Page Location" primaryTypographyProps={{ className: classes.sideIconLabels }}  /> */}
-                                {/* </ListItem> */}
                                 <ListItem button={true}
                                     key={"Home"}
                                     onClick={() => goToAnchor("home", true)}
@@ -579,10 +570,10 @@ class Sidebar extends React.Component {
                                 </a>
                             </List>
                         </Drawer>
-                    </ClickAwayListener>
+                    {/* </ClickAwayListener> */}
                 </Hidden>
                 <Hidden xsDown={this.state.mediaQ2} implementation="css">
-                    <ClickAwayListener onClickAway={this.handleDrawer2Close}>
+                    {/* <ClickAwayListener onClickAway={this.handleDrawer2Close}> */}
                         <Drawer
                             variant="permanent"
                             anchor="right"
@@ -793,7 +784,7 @@ class Sidebar extends React.Component {
                                 </ListItem>
                             </List>
                         </Drawer>
-                    </ClickAwayListener>
+                    {/* </ClickAwayListener> */}
                 </Hidden>
             </div >
         );
