@@ -3,9 +3,9 @@ const Chartist = require("chartist")
 
 var compiledChart = {
     data: {
-        labels: ['Java 11', 'Python'],
+        labels: ['Java', 'Python'],
         series: [
-            [3, 5]
+            [8, 2]
         ]
     },
     options: {

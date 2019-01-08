@@ -71,7 +71,7 @@ const tileData = [
         ref: "https://github.com/blaney83/React-Template",
         title: 'MERN Template',
         tech: 'Mongo, Express, React, Node',
-        polished: true,
+        polished: false,
         featured: false,
         isImg: true,
         popOverText: "This template is configured with React-Router, Redux support and a complete file structure for rapid, full-stack application deployment."
