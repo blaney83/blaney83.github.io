@@ -3,9 +3,9 @@ const Chartist = require("chartist")
 
 var visualChart = {
     data: {
-        labels: ['HTML5', 'CSS3', 'Animations', 'Layouts', 'JSS', 'Material', 'BootStrap', "SCSS"],
+        labels: ['FXML', 'HTML5', 'CSS3', 'Animations', 'Layouts', 'JSS', 'Material', 'BootStrap', "SCSS"],
         series: [
-            [9, 6, 3, 7, 7.5, 8, 8, 2]
+            [6, 9, 6, 3, 7, 7.5, 8, 8, 2]
         ]
     },
     options: {
