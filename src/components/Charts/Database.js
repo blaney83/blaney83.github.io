@@ -308,9 +308,9 @@ var noSQLChart = {
 
 var unstructuredChart = {
     data: {
-        labels: ['WebScraping', 'Normalizing\nData', 'Indexing', 'KNIME'],
+        labels: ['WebScraping', 'Normalizing\nData', 'Indexing', 'KNIME', "RegEx"],
         series: [
-            [10, 9, 5, 0]
+            [10, 9, 5, 1, 4]
         ]
     },
     options: {
