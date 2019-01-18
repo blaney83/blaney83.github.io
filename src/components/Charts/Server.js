@@ -3,9 +3,9 @@ const Chartist = require("chartist")
 
 var serverChart = {
     data: {
-        labels: ['Express', 'Node', 'NPM/Yarn', 'CRUD Ops', 'REST',  'Remote\nDeployment'],
+        labels: ['Express', 'Node', 'NPM/Yarn', 'CRUD Ops', 'REST',  'Remote\nDeployment', 'Apache\nHTTPClient', 'Jetty'],
         series: [
-            [9, 9, 9, 9, 9, 8.5]
+            [9, 9, 9, 9, 9, 8.5, 4, 4]
         ]
     },
     options: {

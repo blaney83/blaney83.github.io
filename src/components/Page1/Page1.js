@@ -317,7 +317,7 @@ class Page1 extends React.Component {
                                                     </ExpansionPanelSummary>
                                                     <ExpansionPanelDetails classes={{ root: classes.panelDetailsContainer }}>
                                                         <Typography className={classes.panelBody}>
-                                                            {"Notably, I have spent time in many positions from delivering food to bartending. I was the general manager of 2 multi-million dollar food and entertainment venues as well as the lead Specimen Triage Analyst in a major hospital's chemistry diagnostics lab. \n\nMore recently I have pursued free lance web and software development while exploring machine learning and data science> I recently taught myself Java 8-11 and I'm working on developing nodes for the KNIME data analytics platform."}
+                                                            {"Notably, I have spent time in many positions from delivering food to bartending. I was the general manager of 2 multi-million dollar food and entertainment venues as well as the lead Specimen Triage Analyst in a major hospital's chemistry diagnostics lab. \n\nMore recently I have pursued free lance web and software development while exploring machine learning and data science. I recently taught myself Java 8-11 and I'm working on developing nodes for the KNIME data analytics platform."}
                                                         </Typography>
                                                     </ExpansionPanelDetails>
                                                 </ExpansionPanel>

@@ -3,9 +3,9 @@ const Chartist = require("chartist")
 
 var csChart = {
     data: {
-        labels: ['CLI', 'Linux', 'Design\nPatterns', 'Big-O', 'Algorithms', 'Hardware'],
+        labels: ['CLI', 'Linux', 'Design\nPatterns', 'Big-O', 'Algorithms', 'Hardware', 'Concurrency'],
         series: [
-            [7, 4, 5, 4, 4, 7]
+            [7, 4, 5, 4, 4, 7, 6.5]
         ]
     },
     options: {
