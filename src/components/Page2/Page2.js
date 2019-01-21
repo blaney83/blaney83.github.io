@@ -112,25 +112,23 @@ const styles = theme => ({
         padding: ".3rem",
         backgroundColor: "#808080d9",
         fontSize: ".6rem",
-        [theme.breakpoints.up('sm')]: {
-            fontSize: ".6rem",
-            marginBottom: "1rem",
-            // marginBottom: "0px"
-        },
+        // [theme.breakpoints.up('sm')]: {
+        //     // marginBottom: "0px"
+        // },
         [theme.breakpoints.up('md')]: {
             fontSize: "1rem",
-            // marginBottom: "0px"
+            marginTop: ".5rem",
         },
-        [theme.breakpoints.up('lg')]: {
-            fontSize: "1.2rem",
-            // marginBottom: "0px"
-        },
-        [theme.breakpoints.up('xl')]: {
-            fontSize: "1.5rem",
-            // marginBottom: "0px"
-        },
+        // [theme.breakpoints.up('lg')]: {
+        //     fontSize: "1rem",
+
+        // },
+        // [theme.breakpoints.up('xl')]: {
+        //     fontSize: "1.rem",
+        //     // marginBottom: "0px"
+        // },
     },
-    discBold:{
+    discBold: {
         fontWeight: "bold"
     }
 })
@@ -150,14 +148,11 @@ function Page2(props) {
                         <GraphTabs></GraphTabs>
                         <Typography className={classes.disclaimer} variant="body">
                             <bold className={classes.discBold}>Note to Visitors:</bold> In no way am I claiming to be an expert developer in any of the technologies listed above. This section is intended merely as a graphical representation of the relationship between technologies with which I have spent the most time working and learning. I am always striving to learn more and improve my development skills. As someone much smarter than me once said:
-                                <br/>
-                                <br/>
-                                "The more I learn, the more I realize how much I don't know."
-                                <br/>
-                                <br/>
-                                    -A.E.
-                                <br/>
-                                <br/>
+                                <br />
+                            <br />
+                            "The more I learn, the more I realize how much I don't know."   -A.E.
+                            <br />
+                            <br />
                         </Typography>
                     </div>
                 </div>

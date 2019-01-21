@@ -3,7 +3,7 @@ const Chartist = require("chartist")
 
 var ideChart = {
     data: {
-        labels: ['MS Visual Studio', 'IntelliJ', 'Eclipse', 'KNIME SDK'],
+        labels: ['MS\nVisual\nStudio', 'IntelliJ', 'Eclipse', 'KNIME SDK'],
         series: [
             [8, 6, 3, 2]
         ]

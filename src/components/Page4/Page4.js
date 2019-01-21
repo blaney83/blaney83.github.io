@@ -253,6 +253,9 @@ function Page4(props) {
                                                         <a className={classes.linkTextDecoration} href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" rel="noopener noreferrer" target="_blank"><Typography variant="body1" className={classes.slideListItem}>- Mozilla JS Docs</Typography></a>
                                                     </ListItem>
                                                     <ListItem button={true} className={classes.listItemClass}>
+                                                        <a className={classes.linkTextDecoration} href="https://docs.oracle.com/en/java/" rel="noopener noreferrer" target="_blank"><Typography variant="body1" className={classes.slideListItem}>- Java Docs</Typography></a>
+                                                    </ListItem>
+                                                    <ListItem button={true} className={classes.listItemClass}>
                                                         <a className={classes.linkTextDecoration} href="https://reactjs.org/docs/getting-started.html" rel="noopener noreferrer" target="_blank"><Typography variant="body1" className={classes.slideListItem}>- React</Typography></a>
                                                     </ListItem>
                                                     <ListItem button={true} className={classes.listItemClass}>
@@ -260,6 +263,9 @@ function Page4(props) {
                                                     </ListItem>
                                                     <ListItem button={true}>
                                                         <a className={classes.linkTextDecoration} href="https://www.w3schools.com/jsref/jsref_obj_array.asp" rel="noopener noreferrer" target="_blank"><Typography variant="body1" className={classes.slideListItem}>- W3 Array Methods</Typography></a>
+                                                    </ListItem>
+                                                    <ListItem button={true}>
+                                                        <a className={classes.linkTextDecoration} href="https://devdocs.io/" rel="noopener noreferrer" target="_blank"><Typography variant="body1" className={classes.slideListItem}>- DevDocs(very cool)</Typography></a>
                                                     </ListItem>
                                                 </List>
                                             </div>
@@ -272,17 +278,26 @@ function Page4(props) {
                                 <div>
                                     <Grid container spacing={16}>
                                         <Grid item xs={12} >
-                                            <Typography variant="body1" className={classes.slideTile}>Frameworks</Typography>
+                                            <Typography variant="body1" className={classes.slideTile}>Frameworks/Libs</Typography>
                                             <div >
                                                 <List dense={true}>
+                                                <ListItem button={true} className={classes.listItemClass}>
+                                                        <a className={classes.linkTextDecoration} href="https://www.jhipster.tech/" rel="noopener noreferrer" target="_blank"><Typography variant="body1" className={classes.slideListItem}>- JHipster</Typography></a>
+                                                    </ListItem>
                                                     <ListItem button={true} className={classes.listItemClass}>
                                                         <a className={classes.linkTextDecoration} href="https://material-ui.com/" rel="noopener noreferrer" target="_blank"><Typography variant="body1" className={classes.slideListItem}>- Material UI (React)</Typography></a>
                                                     </ListItem>
                                                     <ListItem button={true} className={classes.listItemClass}>
-                                                        <a className={classes.linkTextDecoration} href="https://getbootstrap.com/" rel="noopener noreferrer" target="_blank"><Typography variant="body1" className={classes.slideListItem}>- Bootstrap (HTML/CSS)</Typography></a>
+                                                        <a className={classes.linkTextDecoration} href="https://getbootstrap.com/" rel="noopener noreferrer" target="_blank"><Typography variant="body1" className={classes.slideListItem}>- Bootstrap</Typography></a>
                                                     </ListItem>
                                                     <ListItem button={true} className={classes.listItemClass}>
-                                                        <a className={classes.linkTextDecoration} href="https://bulma.io/" rel="noopener noreferrer" target="_blank"><Typography variant="body1" className={classes.slideListItem}>- Materialize</Typography></a>
+                                                        <a className={classes.linkTextDecoration} href="https://maven.apache.org/" rel="noopener noreferrer" target="_blank"><Typography variant="body1" className={classes.slideListItem}>- Apache Maven</Typography></a>
+                                                    </ListItem>
+                                                    <ListItem button={true} className={classes.listItemClass}>
+                                                        <a className={classes.linkTextDecoration} href="https://jquery.com/" rel="noopener noreferrer" target="_blank"><Typography variant="body1" className={classes.slideListItem}>- JQuery</Typography></a>
+                                                    </ListItem>
+                                                    <ListItem button={true} className={classes.listItemClass}>
+                                                        <a className={classes.linkTextDecoration} href="https://junit.org/junit4/" rel="noopener noreferrer" target="_blank"><Typography variant="body1" className={classes.slideListItem}>- JUnit</Typography></a>
                                                     </ListItem>
                                                 </List>
                                             </div>
@@ -303,6 +318,12 @@ function Page4(props) {
                                                     <ListItem button={true} className={classes.listItemClass}>
                                                         <a className={classes.linkTextDecoration} href="https://darknetdiaries.com/" rel="noopener noreferrer" target="_blank"><Typography variant="body1" className={classes.slideListItem}>- darknetdiaries</Typography></a>
                                                     </ListItem>
+                                                    <ListItem button={true} className={classes.listItemClass}>
+                                                        <a className={classes.linkTextDecoration} href="https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw" rel="noopener noreferrer" target="_blank"><Typography variant="body1" className={classes.slideListItem}>- 3Blue1Brown</Typography></a>
+                                                    </ListItem>
+                                                    <ListItem button={true} className={classes.listItemClass}>
+                                                        <a className={classes.linkTextDecoration} href="https://www.youtube.com/user/1veritasium" rel="noopener noreferrer" target="_blank"><Typography variant="body1" className={classes.slideListItem}>- Veritasium</Typography></a>
+                                                    </ListItem>
                                                 </List>
                                             </div>
                                         </Grid>
@@ -319,6 +340,9 @@ function Page4(props) {
                                                 <List dense={true}>
                                                     <ListItem button={true} className={classes.listItemClass}>
                                                         <a className={classes.linkTextDecoration} href="https://unsplash.com/" rel="noopener noreferrer" target="_blank"><Typography variant="body1" className={classes.slideListItem}>- Unsplash</Typography></a>
+                                                    </ListItem>
+                                                    <ListItem button={true} className={classes.listItemClass}>
+                                                        <a className={classes.linkTextDecoration} href="https://d3js.org/" rel="noopener noreferrer" target="_blank"><Typography variant="body1" className={classes.slideListItem}>- D3</Typography></a>
                                                     </ListItem>
                                                     <ListItem button={true} className={classes.listItemClass}>
                                                         <a className={classes.linkTextDecoration} href="https://gionkunz.github.io/chartist-js/api-documentation.html" rel="noopener noreferrer" target="_blank"><Typography variant="body1" className={classes.slideListItem}>- Chartist</Typography></a>

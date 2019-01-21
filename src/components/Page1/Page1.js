@@ -174,7 +174,7 @@ const styles = theme => ({
         },
     },
     paperStyle: {
-        backgroundColor: "#2e2a23"
+        backgroundColor: "#2e2a23c2"
     },
     expandIcon: {
         color: "white"
@@ -280,8 +280,8 @@ class Page1 extends React.Component {
                                                         <Typography className={this.state.expanded === "" || this.state.expanded === "panel1" ? classes.heading : classes.headingHidden}>Intro</Typography>
                                                     </ExpansionPanelSummary>
                                                     <ExpansionPanelDetails classes={{ root: classes.panelDetailsContainer }}>
-                                                        <Typography className={classes.panelBody}>
-                                                            Hey, it's Ben. Thanks for checking out this project. Feel free to poke around the site and explore this ongoing work. See the "About the Page" tab below for more specific viewing suggestions and release notes. Enjoy!
+                                                        <Typography className={classes.panelBody} variant="body1">
+                                                            Hello! Thank you for visiting my site. I put together this project using various web development technologies as a way to exercise creativity and help you get to know me a little better. I am always working to learn and develop my software abilities and if you have any comments or suggestions, please feel free to reach out to me via the "Contact" section below. Thank you. Enjoy your visit!
                                         </Typography>
                                                     </ExpansionPanelDetails>
                                                 </ExpansionPanel>
@@ -295,7 +295,7 @@ class Page1 extends React.Component {
                                                     </ExpansionPanelSummary>
                                                     <ExpansionPanelDetails classes={{ root: classes.panelDetailsContainer }}>
                                                         <Typography className={classes.panelBody}>
-                                                            I've always had a deep love for science, learning, nature and information. Growing up in Arizona, I am an Eagle Scout and a former student-athlete who played baseball through college. Some of my favorite experiences include multi-week backpacking trips, moving to Seattle for a year and raising my husky Aurora.
+                                                            I have a deep appreciation for science, learning, nature and information. Growing up in Arizona, I am an Eagle Scout and a former student-athlete who played baseball through college. Some of my favorite experiences include backpacking in New Mexico, snowboarding in the winter, living in Seattle for a year and raising my husky, Aurora.
                                             </Typography>
                                                     </ExpansionPanelDetails>
                                                 </ExpansionPanel>
@@ -307,7 +307,7 @@ class Page1 extends React.Component {
                                                     </ExpansionPanelSummary>
                                                     <ExpansionPanelDetails classes={{ root: classes.panelDetailsContainer }}>
                                                         <Typography className={classes.panelBody}>
-                                                            {"I excelled in school early on and developed an appreciation for learning through accelerated and STEM classes. I attended Northern Arizona University Honors College on an academic scholarship to study Biomedical Engineering. Understanding I needed additional time to decide my direction was, I transferred to a local college and studied various disciplines including environmental science and sustainability, however my favorite subject was always Chemistry. I received my Associate of Science and began to close in on my calling.\n\nWhen I found software, I found the answer. I have been teaching myself relentlessly ever since!"}
+                                                            While I am not an expert in anything, I love to learn new things and push my understanding of the way the world works. I have studied such topics as biomedical engineering, environment sustainability and chemistry, but I love learning about science and information technology in general. I am fascinated by software and its ability to help us understand the world around us. For fun, I like to read and practice with unfamiliar languages/platforms and explore source code to learn from more experienced developers.
                                                         </Typography>
                                                     </ExpansionPanelDetails>
                                                 </ExpansionPanel>
@@ -317,7 +317,7 @@ class Page1 extends React.Component {
                                                     </ExpansionPanelSummary>
                                                     <ExpansionPanelDetails classes={{ root: classes.panelDetailsContainer }}>
                                                         <Typography className={classes.panelBody}>
-                                                            {"Notably, I have spent time in many positions from delivering food to bartending. I was the general manager of 2 multi-million dollar food and entertainment venues as well as the lead Specimen Triage Analyst in a major hospital's chemistry diagnostics lab. \n\nMore recently I have pursued free lance web and software development while exploring machine learning and data science. I recently taught myself Java 8-11 and I'm working on developing nodes for the KNIME data analytics platform."}
+                                                            There are several key experiences that have had a notable impact on me and have taught me invaluable lessons. In particular, I served as the general manager for 2 multi-million dollar food and entertainment venues where I developed many valuable skills by overseeing more than 100 employees at any given time. Additionally, I served as the lead triage specimen analyst in a major hospital's chemistry diagnostics lab while living in Seattle. Most recently, I have been an assistant instructor in the Software Development Program at the University of Arizona while working to further my education.
                                                         </Typography>
                                                     </ExpansionPanelDetails>
                                                 </ExpansionPanel>
@@ -327,7 +327,7 @@ class Page1 extends React.Component {
                                                     </ExpansionPanelSummary>
                                                     <ExpansionPanelDetails classes={{ root: classes.panelDetailsContainer }}>
                                                         <Typography className={classes.panelBody}>
-                                                            {"Hiking, reading, learning, camping, baseball, football, movies, Tested, snowboarding, travel, reading the news, computer hardware, my dog and making waffles"}
+                                                            {"Hiking, reading, learning, math and science, camping, baseball, football, good movies, good quotes, snowboarding, travel, reading the news, my dog and making waffles."}
                                                         </Typography>
                                                     </ExpansionPanelDetails>
                                                 </ExpansionPanel>
@@ -337,7 +337,7 @@ class Page1 extends React.Component {
                                                     </ExpansionPanelSummary>
                                                     <ExpansionPanelDetails classes={{ root: classes.panelDetailsContainer }}>
                                                         <Typography className={classes.panelBody}>
-                                                            {"Data, Data Structures, Databases, Algorithms, Machine Learning, Web Scraping, KNIME, good looking websites, Python, Node, React and Server structure"}
+                                                            {"Web Development, Server Development, Java and JavaScript, Data Visualization, Data Analysis, Machine Learning, Business Intelligence"}
                                                         </Typography>
                                                     </ExpansionPanelDetails>
                                                 </ExpansionPanel>
@@ -347,7 +347,7 @@ class Page1 extends React.Component {
                                                     </ExpansionPanelSummary>
                                                     <ExpansionPanelDetails classes={{ root: classes.panelDetailsContainer }}>
                                                         <Typography className={classes.panelBody}>
-                                                            {"Respect your neighbor. Love your animals. Protect your planet. Work hard. Learn always. Stand up for whats right. Be a good person. Always be knolling."}
+                                                            {"Respect your neighbor. Love your animals. Protect your planet. Work hard. Never stop learning. Stand up for what is right. Leave things better than you found them. Be a good person."}
                                                         </Typography>
                                                     </ExpansionPanelDetails>
                                                 </ExpansionPanel>
@@ -357,7 +357,7 @@ class Page1 extends React.Component {
                                                     </ExpansionPanelSummary>
                                                     <ExpansionPanelDetails classes={{ root: classes.panelDetailsContainer }}>
                                                         <Typography className={classes.panelBody}>
-                                                            {"This page is currently under development. It was completed over the course of 4 days, developed on Google Chrome for Google Chrome and mobile friendly, but large screen resolutions can distort it functionality. Current recommended zoom ratio is between 768 px wide and 1024 xp wide. If you are having trouble viewing the site and its features, try adjusting you zoom settings to these values. Further development on this site is planned and if you are using a browser other than Chrome or a mobile browser and you encounter an ISSUE, please CONTACT me at PROFESSIONALLANEY@GMAIL.COM. Suggestions are welcome. Enjoy!"}
+                                                            This page was a lot of fun to make. I know it is not perfect, but I would love to hear from you about your experience and how I could make it better. It was developed mostly on the Chrome engine and is most reliable with large screens (laptops, etc.) when viewed with Google Chrome and on most mobile devices. If you have any issues please let me know so I can fix them. Also, feel free to contact me to share ideas or just get in touch. I would love to hear from you. Thanks!
                                                         </Typography>
                                                     </ExpansionPanelDetails>
                                                 </ExpansionPanel>
