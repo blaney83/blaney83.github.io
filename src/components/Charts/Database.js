@@ -3,9 +3,9 @@ const Chartist = require("chartist")
 
 var sqlChart = {
     data: {
-        labels: ['mySQL', "SQLite", 'Sequelize', 'Seeding', 'CSV Files', 'ORM Design', 'CLI', 'Workbench'],
+        labels: ['mySQL', "SQLite", 'Sequelize', 'Seeding', 'CSV Files', 'XML', 'ORM Design', 'CLI', 'Workbench'],
         series: [
-            [7.5, 7, 8, 5, 9, 8, 7, 8.5]
+            [7.5, 7, 8, 5, 9, 4, 8, 7, 8.5]
         ]
     },
     options: {
@@ -155,9 +155,9 @@ var sqlChart = {
 
 var noSQLChart = {
     data: {
-        labels: ['Mongo\nmLab', 'Mongoose', 'JSON', 'ORM', 'CLI', 'T3'],
+        labels: ['MongoDB\nmLab', 'Mongoose', 'JSON', 'ORM', 'CLI', 'T3'],
         series: [
-            [8, 8.5, 9, 8, 9, 8.5]
+            [7, 8, 9, 8, 8, 7]
         ]
     },
     options: {
@@ -308,9 +308,9 @@ var noSQLChart = {
 
 var unstructuredChart = {
     data: {
-        labels: ['WebScraping', 'Normalizing\nData', 'Indexing', 'KNIME', "RegEx"],
+        labels: ['WebScraping', 'Normalizing\nData', 'Manipulation', "RegEx"],
         series: [
-            [10, 9, 5, 1, 4]
+            [7, 4, 4, 5]
         ]
     },
     options: {

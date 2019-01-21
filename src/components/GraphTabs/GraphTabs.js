@@ -15,6 +15,8 @@ import ServerIcon from "@material-ui/icons/RouterOutlined"
 import CSIcon from "@material-ui/icons/CategoryOutlined"
 import SevenIcon from "@material-ui/icons/Fingerprint"
 import EightIcon from "@material-ui/icons/FormatAlignRightOutlined"
+import NineIcon from "@material-ui/icons/AssessmentOutlined"
+import TenIcon from "@material-ui/icons/DeveloperModeOutlined"
 import Typography from '@material-ui/core/Typography';
 import ChartistGraph from "react-chartist";
 import "./graphStyle.css"
@@ -37,6 +39,9 @@ import {
     unstructuredChart,
 } from "../Charts/Database.js";
 import {
+    dataAnalysisChart,
+} from "../Charts/DataAnalysis.js";
+import {
     csChart,
 } from "../Charts/CS.js";
 import {
@@ -45,6 +50,9 @@ import {
 import {
     cloudChart,
 } from "../Charts/Cloud.js";
+import {
+    ideChart,
+} from "../Charts/IDEs.js";
 
 function TabContainer(props) {
     return (
@@ -73,7 +81,7 @@ const styles = theme => ({
     },
     eachTab: {
         color: "white"
-    }
+    },
 });
 
 function GraphTabs(props) {
@@ -102,14 +110,16 @@ function GraphTabs(props) {
                     className={classes.eachTab}
                 >
                     <Tab label="Visual" icon={<VisualIcon />} onClick={() => props.toggleGraph(updateGraph, 0)} />
-                    <Tab label="Scripting" icon={<ScriptIcon />} onClick={() => props.toggleGraph(updateGraph, 1)} />
-                    <Tab label="Compiled/Interpreted" icon={<Lock />} onClick={() => props.toggleGraph(updateGraph, 2)} />
-                    <Tab label="Cloud-Based" icon={<Cloud />} onClick={() => props.toggleGraph(updateGraph, 3)} />
-                    <Tab label="SQL" icon={<SQLIcon />} onClick={() => props.toggleGraph(updateGraph, 4)} />
-                    <Tab label="noSQL" icon={<EightIcon />} onClick={() => props.toggleGraph(updateGraph, 5)} />
-                    <Tab label="Unstructured Data" icon={<SevenIcon />} onClick={() => props.toggleGraph(updateGraph, 6)} />
-                    <Tab label="Server" icon={<ServerIcon />} onClick={() => props.toggleGraph(updateGraph, 7)} />
-                    <Tab label="CS Basics" icon={<CSIcon />} onClick={() => props.toggleGraph(updateGraph, 8)} />
+                    <Tab label="Scripting/Functional" icon={<ScriptIcon />} onClick={() => props.toggleGraph(updateGraph, 1)} />
+                    <Tab label="Compiled/OOP" icon={<Lock />} onClick={() => props.toggleGraph(updateGraph, 2)} />
+                    <Tab label="IDEs" icon={<TenIcon />} onClick={() => props.toggleGraph(updateGraph, 3)} />
+                    <Tab label="Cloud-Based" icon={<Cloud />} onClick={() => props.toggleGraph(updateGraph, 4)} />
+                    <Tab label="SQL" icon={<SQLIcon />} onClick={() => props.toggleGraph(updateGraph, 5)} />
+                    <Tab label="noSQL" icon={<EightIcon />} onClick={() => props.toggleGraph(updateGraph, 6)} />
+                    <Tab label="Unstructured Data" icon={<SevenIcon />} onClick={() => props.toggleGraph(updateGraph, 7)} />
+                    <Tab label="Data Analysis" icon={<NineIcon />} onClick={() => props.toggleGraph(updateGraph, 8)} />
+                    <Tab label="Server" icon={<ServerIcon />} onClick={() => props.toggleGraph(updateGraph, 9)} />
+                    <Tab label="CS Basics" icon={<CSIcon />} onClick={() => props.toggleGraph(updateGraph, 10)} />
                 </Tabs>
             </AppBar>
             {props.graph === 0 && <TabContainer className={classes.graphBackground}>
@@ -137,7 +147,7 @@ function GraphTabs(props) {
                 />
             </TabContainer>}
             {props.graph === 2 && <TabContainer className={classes.graphBackground}>
-                Compiled/Interpreted
+                Compiled/OOP
                                 <ChartistGraph
                     className="ct-chart"
                     data={compiledChart.data}
@@ -149,56 +159,80 @@ function GraphTabs(props) {
                 />
             </TabContainer>}
             {props.graph === 3 && <TabContainer className={classes.graphBackground}>
+                Integrated Development Environments
+                                <ChartistGraph
+                    className="ct-chart"
+                    data={ideChart.data}
+                    type="Line"
+                    options={ideChart.options}
+                    responsiveOptions={ideChart.responsiveOptions}
+                    listener={ideChart.animation}
+                    plugins={ideChart.plugins.chartistPluginAxisTitle}
+                />
+            </TabContainer>}
+            {props.graph === 4 && <TabContainer className={classes.graphBackground}>
                 Cloud-Based
                                 <ChartistGraph
                     className="ct-chart"
                     data={cloudChart.data}
-                    type="Line"
+                    type="Bar"
                     options={cloudChart.options}
                     responsiveOptions={cloudChart.responsiveOptions}
                     listener={cloudChart.animation}
                     plugins={cloudChart.plugins.chartistPluginAxisTitle}
                 />
             </TabContainer>}
-            {props.graph === 4 && <TabContainer className={classes.graphBackground}>
+            {props.graph === 5 && <TabContainer className={classes.graphBackground}>
                 SQL Databases
                                 <ChartistGraph
                     className="ct-chart"
                     data={sqlChart.data}
-                    type="Bar"
+                    type="Line"
                     options={sqlChart.options}
                     responsiveOptions={sqlChart.responsiveOptions}
                     listener={sqlChart.animation}
                     plugins={sqlChart.plugins.chartistPluginAxisTitle}
                 />
             </TabContainer>}
-            {props.graph === 5 && <TabContainer className={classes.graphBackground}>
+            {props.graph === 6 && <TabContainer className={classes.graphBackground}>
                 noSQL Databases
                                 <ChartistGraph
                     className="ct-chart"
                     data={noSQLChart.data}
-                    type="Line"
+                    type="Bar"
                     options={noSQLChart.options}
                     responsiveOptions={noSQLChart.responsiveOptions}
                     listener={noSQLChart.animation}
                     plugins={noSQLChart.plugins.chartistPluginAxisTitle}
                 />
             </TabContainer>}
-            {props.graph === 6 && <TabContainer className={classes.graphBackground}>
+            {props.graph === 7 && <TabContainer className={classes.graphBackground}>
                 Unstructured Data
                                 <ChartistGraph
                     className="ct-chart"
                     data={unstructuredChart.data}
-                    type="Bar"
+                    type="Line"
                     options={unstructuredChart.options}
                     responsiveOptions={unstructuredChart.responsiveOptions}
                     listener={unstructuredChart.animation}
                     plugins={unstructuredChart.plugins.chartistPluginAxisTitle}
                 />
             </TabContainer>}
-            {props.graph === 7 && <TabContainer className={classes.graphBackground}>
+            {props.graph === 8 && <TabContainer className={classes.graphBackground}>
+                Data Analysis
+                    <ChartistGraph
+                    className="ct-chart"
+                    data={dataAnalysisChart.data}
+                    type="Bar"
+                    options={dataAnalysisChart.options}
+                    responsiveOptions={dataAnalysisChart.responsiveOptions}
+                    listener={dataAnalysisChart.animation}
+                    plugins={dataAnalysisChart.plugins.chartistPluginAxisTitle}
+                />
+            </TabContainer>}
+            {props.graph === 9 && <TabContainer className={classes.graphBackground}>
                 Server
-                                <ChartistGraph
+                    <ChartistGraph
                     className="ct-chart"
                     data={serverChart.data}
                     type="Line"
@@ -208,9 +242,9 @@ function GraphTabs(props) {
                     plugins={serverChart.plugins.chartistPluginAxisTitle}
                 />
             </TabContainer>}
-            {props.graph === 8 && <TabContainer className={classes.graphBackground}>
+            {props.graph === 10 && <TabContainer className={classes.graphBackground}>
                 CS Basics
-                                <ChartistGraph
+                    <ChartistGraph
                     className="ct-chart"
                     data={csChart.data}
                     type="Bar"
@@ -237,7 +271,7 @@ function mapDispatchToProps(dispatch) {
             }))
         }
     }
-    return(graphMethods)
+    return (graphMethods)
 }
 
 function mapStateToProps(state) {

@@ -503,7 +503,7 @@ class Sidebar extends React.Component {
                                     <ListItemIcon>
                                         <CodeIcon className={classes.sideIcons} />
                                     </ListItemIcon>
-                                    <ListItemText primary="Practical Knowledge" primaryTypographyProps={{ className: classes.sideIconLabels }} secondaryTypographyProps={{ className: classes.sideIconSubLabels }} />
+                                    <ListItemText primary="Technical Exposure" primaryTypographyProps={{ className: classes.sideIconLabels }} secondaryTypographyProps={{ className: classes.sideIconSubLabels }} />
                                 </ListItem>
                                 <ListItem button className={this.state.currentPage === "#projects" ? classes.selectedListItems : classes.sideListItems}
                                     key={"Project Anthology"}

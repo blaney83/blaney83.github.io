@@ -1,16 +1,17 @@
 // const chartistPluginAxisTitle = require("../../../node_modules/chartist-plugin-axistitle/dist/chartist-plugin-axistitle")
 const Chartist = require("chartist")
 
-var compiledChart = {
+var ideChart = {
     data: {
-        labels: ['Java', 'Python'],
+        labels: ['MS Visual Studio', 'IntelliJ', 'Eclipse', 'KNIME SDK'],
         series: [
-            [8, 1]
+            [8, 6, 3, 2]
         ]
     },
     options: {
         low: 0,
-        high: 10
+        high: 10,
+        showArea: true
     },
     animation: {
         // Let's put a sequence number aside so we can use it in the event callbacks
@@ -19,19 +20,19 @@ var compiledChart = {
         durations: 200,
         // Once the chart is fully created we reset the sequence
         created: function () {
-            compiledChart.animation.seq = 0;
+            ideChart.animation.seq = 0;
         },
         // On each drawn element by Chartist we use the Chartist.Svg API to trigger SMIL animations
         draw: function (data) {
-            compiledChart.animation.seq++;
+            ideChart.animation.seq++;
             if (data.type === 'line') {
                 // If the drawn element is a line we do a simple opacity fade in. This could also be achieved using CSS3 animations.
                 data.element.animate({
                     opacity: {
                         // The delay when we like to start the animation
-                        begin: compiledChart.animation.seq * compiledChart.animation.delays + 1000,
+                        begin: ideChart.animation.seq * ideChart.animation.delays + 1000,
                         // Duration of the animation
-                        dur: compiledChart.animation.durations,
+                        dur: ideChart.animation.durations,
                         // The value where the animation should start
                         from: 0,
                         // The value where it should end
@@ -41,8 +42,8 @@ var compiledChart = {
             } else if (data.type === 'label' && data.axis === 'x') {
                 data.element.animate({
                     y: {
-                        begin: compiledChart.animation.seq * compiledChart.animation.delays,
-                        dur: compiledChart.animation.durations,
+                        begin: ideChart.animation.seq * ideChart.animation.delays,
+                        dur: ideChart.animation.durations,
                         from: data.y + 100,
                         to: data.y,
                         // We can specify an easing function from Chartist.Svg.Easing
@@ -52,8 +53,8 @@ var compiledChart = {
             } else if (data.type === 'label' && data.axis === 'y') {
                 data.element.animate({
                     x: {
-                        begin: compiledChart.animation.seq * compiledChart.animation.delays,
-                        dur: compiledChart.animation.durations,
+                        begin: ideChart.animation.seq * ideChart.animation.delays,
+                        dur: ideChart.animation.durations,
                         from: data.x - 100,
                         to: data.x,
                         easing: Chartist.Svg.Easing.easeOutQuart
@@ -62,22 +63,22 @@ var compiledChart = {
             } else if (data.type === 'point') {
                 data.element.animate({
                     x1: {
-                        begin: compiledChart.animation.seq * compiledChart.animation.delays,
-                        dur: compiledChart.animation.durations,
+                        begin: ideChart.animation.seq * ideChart.animation.delays,
+                        dur: ideChart.animation.durations,
                         from: data.x - 10,
                         to: data.x,
                         easing: Chartist.Svg.Easing.easeOutQuart
                     },
                     x2: {
-                        begin: compiledChart.animation.seq * compiledChart.animation.delays,
-                        dur: compiledChart.animation.durations,
+                        begin: ideChart.animation.seq * ideChart.animation.delays,
+                        dur: ideChart.animation.durations,
                         from: data.x - 10,
                         to: data.x,
                         easing: Chartist.Svg.Easing.easeOutQuart
                     },
                     opacity: {
-                        begin: compiledChart.animation.seq * compiledChart.animation.delays,
-                        dur: compiledChart.animation.durations,
+                        begin: ideChart.animation.seq * ideChart.animation.delays,
+                        dur: ideChart.animation.durations,
                         from: 0,
                         to: 1,
                         easing: Chartist.Svg.Easing.easeOutQuart
@@ -86,15 +87,15 @@ var compiledChart = {
             } else if (data.type === 'grid') {
                 // Using data.axis we get x or y which we can use to construct our animation definition objects
                 var pos1Animation = {
-                    begin: compiledChart.animation.seq * compiledChart.animation.delays,
-                    dur: compiledChart.animation.durations,
+                    begin: ideChart.animation.seq * ideChart.animation.delays,
+                    dur: ideChart.animation.durations,
                     from: data[data.axis.units.pos + '1'] - 30,
                     to: data[data.axis.units.pos + '1'],
                     easing: Chartist.Svg.Easing.easeOutQuart
                 };
                 var pos2Animation = {
-                    begin: compiledChart.animation.seq * compiledChart.animation.delays,
-                    dur: compiledChart.animation.durations,
+                    begin: ideChart.animation.seq * ideChart.animation.delays,
+                    dur: ideChart.animation.durations,
                     from: data[data.axis.units.pos + '2'] - 100,
                     to: data[data.axis.units.pos + '2'],
                     easing: Chartist.Svg.Easing.easeOutQuart
@@ -103,8 +104,8 @@ var compiledChart = {
                 animations[data.axis.units.pos + '1'] = pos1Animation;
                 animations[data.axis.units.pos + '2'] = pos2Animation;
                 animations['opacity'] = {
-                    begin: compiledChart.animation.seq * compiledChart.animation.delays,
-                    dur: compiledChart.animation.durations,
+                    begin: ideChart.animation.seq * ideChart.animation.delays,
+                    dur: ideChart.animation.durations,
                     from: 0,
                     to: 1,
                     easing: Chartist.Svg.Easing.easeOutQuart
@@ -119,9 +120,9 @@ var compiledChart = {
             {
                 seriesBarDistance: 5,
                 axisX: {
-                //     labelInterpolationFnc: function (value) {
-                //         return value[0];
-                //     }
+                    // labelInterpolationFnc: function (value) {
+                    //     return value[0];
+                    // }
                 }
             }
         ]
@@ -164,5 +165,5 @@ var compiledChart = {
 // });
 
 module.exports = {
-    compiledChart
+    ideChart
 }
