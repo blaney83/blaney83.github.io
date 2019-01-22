@@ -4,10 +4,15 @@ svg.ct-chart-bar, svg.ct-chart-line{
 .ct-label.ct-label.ct-horizontal.ct-end {
   position: relative;
   justify-content: flex-end;
-  text-align: right;
+  text-align: center;
+  /* text-anchor: center !important; */
   transform-origin: 100% 0;
   transform: translate(-100%) rotate(-45deg);
   white-space:nowrap;
+}
+
+.ct-chart-bar > .ct-labels > foreignObject >.ct-label.ct-horizontal.ct-end {
+  left: calc(100% / 2);
 }
 
 .ct-series-a .ct-point{
