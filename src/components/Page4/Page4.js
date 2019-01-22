@@ -156,18 +156,18 @@ const styles = theme => ({
     },
     slideTile: {
         color: "white",
-        fontSize: "1rem",
+        fontSize: ".95rem",
         fontWeight: "bold",
         [theme.breakpoints.up('sm')]: {
-            fontSize: "1.2rem",
+            fontSize: "1.05rem",
             // marginBottom: "0px"
         },
         [theme.breakpoints.up('lg')]: {
-            fontSize: "1.6rem",
+            fontSize: "1.4rem",
             // marginBottom: "0px"
         },
         [theme.breakpoints.up('xl')]: {
-            fontSize: "4rem",
+            fontSize: "3rem",
             // marginBottom: "0px"
         },
     },
@@ -195,7 +195,7 @@ const styles = theme => ({
             // marginBottom: "0px"
         },
         [theme.breakpoints.up('xl')]: {
-            fontSize: "2.5rem",
+            fontSize: "1.5rem",
             // marginBottom: "0px"
         },
     },

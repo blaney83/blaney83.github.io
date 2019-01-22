@@ -357,19 +357,35 @@ const styles = theme => ({
         transform: 'translateZ(0)',
     },
     title: {
-        color: theme.palette.primary.light,
+        color: "#ffffff",
         fontSize: ".7rem",
         [theme.breakpoints.up('sm')]: {
-            fontSize: "1rem",
+            fontSize: ".9rem",
         },
         [theme.breakpoints.up('md')]: {
-            fontSize: "1.2rem",
+            fontSize: "1rem",
         },
         [theme.breakpoints.up('lg')]: {
-            fontSize: "1.6rem",
+            fontSize: "1.1rem",
         },
         [theme.breakpoints.up('xl')]: {
-            fontSize: "2rem",
+            fontSize: "1.6rem",
+        },
+    },
+    subtitleGrid: {
+        color: "#ffffff",
+        fontSize: ".6rem",
+        [theme.breakpoints.up('sm')]: {
+            fontSize: ".8rem",
+        },
+        [theme.breakpoints.up('md')]: {
+            fontSize: ".9rem",
+        },
+        [theme.breakpoints.up('lg')]: {
+            fontSize: "1rem",
+        },
+        [theme.breakpoints.up('xl')]: {
+            fontSize: "1.3rem",
         },
     },
     titleBar: {
@@ -485,6 +501,22 @@ const styles = theme => ({
             fontSize: "1.8rem",
         },
     },
+    modalTitle: {
+        color: "white",
+        fontSize: "1rem",
+        [theme.breakpoints.up('sm')]: {
+            fontSize: "1.2rem",
+        },
+        [theme.breakpoints.up('md')]: {
+            fontSize: "1.4rem",
+        },
+        [theme.breakpoints.up('lg')]: {
+            fontSize: "1.5rem",
+        },
+        [theme.breakpoints.up('xl')]: {
+            fontSize: "1.9rem",
+        },
+    },
 });
 
 
@@ -516,6 +548,7 @@ function Portfolio(props) {
                 </IconButton>
                 <GridListTileBar
                     title={tile.title}
+                    classes={{ title: classes.title, subtitle: classes.subtitleGrid }}
                     subtitle={<span className={classes.subtitleText}>
                         {tile.tech}
                     </span>}
@@ -540,6 +573,7 @@ function Portfolio(props) {
                     onClose={() => props.setAnchorEl(tile.num, props.anchorEl)}
                 >
                     <div className={classes.paper}>
+                        <Typography variant="h6" className={classes.modalTitle}>{tile.title}<br/><br/></Typography>
                         <Typography variant="subtitle1" className={classes.modalText}>
                             {tile.popOverText}
                         </Typography>
