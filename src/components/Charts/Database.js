@@ -10,7 +10,8 @@ var sqlChart = {
     },
     options: {
         low: 0,
-        high: 10
+        high: 10,
+        showArea: true
     },
     animation: {
         // Let's put a sequence number aside so we can use it in the event callbacks
@@ -315,7 +316,8 @@ var unstructuredChart = {
     },
     options: {
         low: 0,
-        high: 10
+        high: 10,
+        showArea: true
     },
     animation: {
         // Let's put a sequence number aside so we can use it in the event callbacks

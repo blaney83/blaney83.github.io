@@ -360,22 +360,6 @@ const styles = theme => ({
         color: "#ffffff",
         fontSize: ".7rem",
         [theme.breakpoints.up('sm')]: {
-            fontSize: ".9rem",
-        },
-        [theme.breakpoints.up('md')]: {
-            fontSize: "1rem",
-        },
-        [theme.breakpoints.up('lg')]: {
-            fontSize: "1.1rem",
-        },
-        [theme.breakpoints.up('xl')]: {
-            fontSize: "1.6rem",
-        },
-    },
-    subtitleGrid: {
-        color: "#ffffff",
-        fontSize: ".6rem",
-        [theme.breakpoints.up('sm')]: {
             fontSize: ".8rem",
         },
         [theme.breakpoints.up('md')]: {
@@ -385,7 +369,23 @@ const styles = theme => ({
             fontSize: "1rem",
         },
         [theme.breakpoints.up('xl')]: {
-            fontSize: "1.3rem",
+            fontSize: "1.4rem",
+        },
+    },
+    subtitleGrid: {
+        color: "#ffffff",
+        fontSize: ".6rem",
+        [theme.breakpoints.up('sm')]: {
+            fontSize: ".7rem",
+        },
+        [theme.breakpoints.up('md')]: {
+            fontSize: ".8rem",
+        },
+        [theme.breakpoints.up('lg')]: {
+            fontSize: ".9rem",
+        },
+        [theme.breakpoints.up('xl')]: {
+            fontSize: "1.2rem",
         },
     },
     titleBar: {
