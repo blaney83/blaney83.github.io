@@ -5,7 +5,6 @@ svg.ct-chart-bar, svg.ct-chart-line{
   position: relative;
   justify-content: flex-end;
   text-align: center;
-  /* text-anchor: center !important; */
   transform-origin: 100% 0;
   transform: translate(-100%) rotate(-45deg);
   white-space:nowrap;

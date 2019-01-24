@@ -5,7 +5,7 @@ var ideChart = {
     data: {
         labels: ['MS\nVisual\nStudio', 'IntelliJ', 'Eclipse', 'KNIME SDK'],
         series: [
-            [8, 6, 3, 2]
+            [8, 6, 6, 5]
         ]
     },
     options: {
