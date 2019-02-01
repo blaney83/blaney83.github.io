@@ -39,7 +39,9 @@ import image21 from '../../assets/img/portfolioImg/21more.jpg';
 import image22 from '../../assets/img/portfolioImg/rawpixel-1162844-unsplash.jpg';
 import image23 from '../../assets/img/portfolioImg/23encap.jpg';
 import image24 from '../../assets/img/portfolioImg/24wfall.jpg';
+import image25 from '../../assets/img/portfolioImg/25wf.jpg';
 // import jrVideo from "../../assets/img/jrclipped.mp4";
+
 
 
 const tileData = [
@@ -56,8 +58,20 @@ const tileData = [
         popOverText: "This application is designed to help streamline the job search process. It compiles data from 6 of the largest job search engines on the internet and allows users to create dynamic profiles which allow integrated progress tracking though proprietary filtering and sorting methodology."
     },
     {
-        img: image22,
+        img: image25,
         num: 2,
+        id: "portfolioItem",
+        ref: "https://github.com/blaney83/waterfall_chart_viz",
+        title: 'Waterfall Node',
+        tech: 'Java, .swing',
+        featured: true,
+        polished: true,
+        isImg: true,
+        popOverText: "This fully functioning Eclipse plug-in is built to be integrated into the KNIME Analytics Platform and provides a colorized, bifurcated bin view with an aggregate column which can be exported as an SVG file. Works with net-positive and net-negative columns and binned elements of numeric, nominal or categorical data types."
+    },
+    {
+        img: image22,
+        num: 3,
         id: "portfolioItem",
         ref: "https://github.com/blaney83/JTD",
         title: 'JTD',
@@ -69,7 +83,7 @@ const tileData = [
     },
     {
         img: image8,
-        num: 3,
+        num: 4,
         id: "portfolioItem",
         ref: "https://github.com/blaney83/useful_snippets_and_components",
         title: 'Useful Snippets',
@@ -81,7 +95,7 @@ const tileData = [
     },
     {
         img: image24,
-        num: 4,
+        num: 5,
         id: "portfolioItem",
         ref: "https://github.com/blaney83/D3_WaterFall_Chart",
         title: 'D3 Waterfall Chart',
@@ -93,7 +107,7 @@ const tileData = [
     },
     {
         img: image2,
-        num: 5,
+        num: 6,
         id: "portfolioItem",
         ref: "https://github.com/blaney83/SPA-Dynamic-Background-Scroll-Feed-Template",
         title: 'SPA Vertical Website Template',
@@ -105,7 +119,7 @@ const tileData = [
     },
     {
         img: image3,
-        num: 6,
+        num: 7,
         id: "portfolioItem",
         ref: "https://github.com/blaney83/React-Template",
         title: 'MERN Template',
@@ -117,7 +131,7 @@ const tileData = [
     },
     {
         img: image4,
-        num: 7,
+        num: 8,
         id: "portfolioItem",
         ref: "https://github.com/blaney83/new_laptop",
         title: 'New Laptop',
@@ -129,7 +143,7 @@ const tileData = [
     },
     {
         img: image5,
-        num: 8,
+        num: 9,
         id: "portfolioItem",
         ref: "https://fanter.herokuapp.com/",
         title: 'Fanter',
@@ -141,7 +155,7 @@ const tileData = [
     },
     {
         img: image6,
-        num: 9,
+        num: 10,
         id: "portfolioItem",
         ref: "https://github.com/blaney83/cli_sql_store",
         title: 'CLI Store Software',
@@ -153,7 +167,7 @@ const tileData = [
     },
     {
         img: image7,
-        num: 10,
+        num: 11,
         id: "portfolioItem",
         ref: "https://pillcoach.herokuapp.com/",
         title: 'Pill Coach',
@@ -165,7 +179,7 @@ const tileData = [
     },
     {
         img: image23,
-        num: 11,
+        num: 12,
         id: "portfolioItem",
         ref: "https://github.com/blaney83/Poly_Encap_Inherit_Comp",
         title: 'Inheritance and Encapsulation',
@@ -177,7 +191,7 @@ const tileData = [
     },
     {
         img: image9,
-        num: 12,
+        num: 13,
         id: "portfolioItem",
         ref: "https://github.com/blaney83/liri-node-app",
         title: 'Liri',
@@ -189,7 +203,7 @@ const tileData = [
     },
     {
         img: image10,
-        num: 13,
+        num: 14,
         id: "portfolioItem",
         ref: "https://github.com/blaney83/SVW_project_one",
         title: "Let's Travel",
@@ -201,7 +215,7 @@ const tileData = [
     },
     {
         img: image11,
-        num: 14,
+        num: 15,
         id: "portfolioItem",
         href: "https://blaney83.github.io/RPS-Multiplayer/",
         title: 'Multi-Player RPS',
@@ -213,7 +227,7 @@ const tileData = [
     },
     {
         img: image12,
-        num: 15,
+        num: 16,
         id: "portfolioItem",
         ref: "https://memory-tiles.herokuapp.com/",
         title: 'React Tiles',
@@ -225,7 +239,7 @@ const tileData = [
     },
     {
         img: image13,
-        num: 16,
+        num: 17,
         id: "portfolioItem",
         ref: "https://blaney83.github.io/Interactive-Giphy-Search/",
         title: 'Giphy Search',
@@ -237,7 +251,7 @@ const tileData = [
     },
     {
         img: image14,
-        num: 17,
+        num: 18,
         id: "portfolioItem",
         ref: "https://blaney83.github.io/TriviaGame/",
         title: 'Harry Potter Trivia',
@@ -249,7 +263,7 @@ const tileData = [
     },
     {
         img: image15,
-        num: 18,
+        num: 19,
         id: "portfolioItem",
         ref: "https://blaney83.github.io/Projects/jQuery_Game/index.html",
         title: 'Bees V. Wasp',
@@ -261,7 +275,7 @@ const tileData = [
     },
     {
         img: image16,
-        num: 19,
+        num: 20,
         id: "portfolioItem",
         ref: "https://friendfinder5001.herokuapp.com/",
         title: 'Friend Finder',
@@ -273,7 +287,7 @@ const tileData = [
     },
     {
         img: image17,
-        num: 20,
+        num: 21,
         id: "portfolioItem",
         ref: "https://github.com/blaney83/playlist_manager",
         title: 'SQL Playlist',
@@ -285,7 +299,7 @@ const tileData = [
     },
     {
         img: image18,
-        num: 21,
+        num: 22,
         id: "portfolioItem",
         ref: "https://blaney83.github.io/Projects/Tic_Tac_Toe/index.html",
         title: 'Unbeatable T-T-T',
@@ -297,7 +311,7 @@ const tileData = [
     },
     {
         img: image19,
-        num: 22,
+        num: 23,
         id: "portfolioItem",
         ref: "https://blaney83.github.io/Projects/WordGuess/index.html",
         title: "Silicon Valley 'Bach'man",
@@ -309,7 +323,7 @@ const tileData = [
     },
     {
         img: image20,
-        num: 23,
+        num: 24,
         id: "portfolioItem",
         ref: "https://blaney83.github.io/Projects/Rock_Paper_Scissors/index.html",
         title: 'RPS Stats',
@@ -321,7 +335,7 @@ const tileData = [
     },
     {
         img: image21,
-        num: 24,
+        num: 25,
         id: "portfolioItem",
         ref: "https://github.com/blaney83?before=Y3Vyc29yOnYyOpK5MjAxOC0wOS0yOVQxNTowMDo1My0wNzowMM4I85n9&tab=repositories",
         title: 'More Coming Soon!',
@@ -329,7 +343,7 @@ const tileData = [
         featured: true,
         polished: true,
         isImg: true,
-        popOverText: "Always be Knolling"
+        popOverText: "Reach out in the contact section to ask me what I'm working on right now."
     },
 ]
 
