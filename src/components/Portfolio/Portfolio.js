@@ -40,22 +40,48 @@ import image22 from '../../assets/img/portfolioImg/rawpixel-1162844-unsplash.jpg
 import image23 from '../../assets/img/portfolioImg/23encap.jpg';
 import image24 from '../../assets/img/portfolioImg/24wfall.jpg';
 import image25 from '../../assets/img/portfolioImg/25wf.jpg';
+import image26 from '../../assets/img/portfolioImg/26regress.jpg';
+import image27 from '../../assets/img/portfolioImg/27column.jpg';
 // import jrVideo from "../../assets/img/jrclipped.mp4";
 
 
 
 const tileData = [
     {
-        img: image1,
-        num: 1,
+        img: image26,
+        num: 26,
         id: "portfolioItem",
-        ref: "http://job-router.herokuapp.com/",
-        title: 'Job-Router',
-        tech: 'MongoDB, React 16.7.2A',
+        ref: "https://github.com/blaney83/Multivariate-Linear-Polynomial-Regression-3D-Modeling-Node",
+        title: 'Multivariate Linear/Polynomial Regression 3D Modeling Node',
+        tech: 'Java',
         featured: true,
         polished: true,
         isImg: true,
-        popOverText: "This application is designed to help streamline the job search process. It compiles data from 6 of the largest job search engines on the internet and allows users to create dynamic profiles which allow integrated progress tracking though proprietary filtering and sorting methodology."
+        popOverText: "This fully functioning Eclipse plug-in is built to be integrated into the KNIME Analytics Platform and provides a 3D representation to obtain a visual ,closeness of fit' test when provided a co-efficient table output by an upstream multivariate linear/polynomial regression node."
+    },
+    {
+        img: image24,
+        num: 5,
+        id: "portfolioItem",
+        ref: "https://github.com/blaney83/D3_WaterFall_Chart",
+        title: 'D3 Waterfall Chart',
+        tech: 'D3',
+        featured: false,
+        polished: true,
+        isImg: true,
+        popOverText: "Reusable, D3 water-fall chart for data visualization with CSV processing and bin-sorting functionality."
+    },
+    {
+        img: image27,
+        num: 27,
+        id: "portfolioItem",
+        ref: "https://github.com/blaney83/dynamic_column_generator",
+        title: 'Dynamic Column Generator Node',
+        tech: 'Java',
+        featured: false,
+        polished: true,
+        isImg: true,
+        popOverText: "KNIME Analytics Platform compatible node which creates columns of either type String or Double randomly to assist with testing."
     },
     {
         img: image25,
@@ -94,16 +120,16 @@ const tileData = [
         popOverText: "This repository houses random fiddles, workarounds and tricks deemed worthy of saving."
     },
     {
-        img: image24,
-        num: 5,
+        img: image1,
+        num: 1,
         id: "portfolioItem",
-        ref: "https://github.com/blaney83/D3_WaterFall_Chart",
-        title: 'D3 Waterfall Chart',
-        tech: 'D3',
+        ref: "http://job-router.herokuapp.com/",
+        title: 'Job-Router',
+        tech: 'MongoDB, React 16.7.2A',
         featured: true,
         polished: true,
         isImg: true,
-        popOverText: "Reusable, D3 water-fall chart for data visualization with CSV processing and bin-sorting functionality."
+        popOverText: "This application is designed to help streamline the job search process. It compiles data from 6 of the largest job search engines on the internet and allows users to create dynamic profiles which allow integrated progress tracking though proprietary filtering and sorting methodology."
     },
     {
         img: image2,
